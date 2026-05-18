@@ -174,7 +174,7 @@ function Nav({ page, setPage }: { page: string; setPage: (page: string) => void 
 
 // ─── HOME PAGE ───────────────────────────────────────────────────────────────
 
-function TagPill({ text, i }) {
+function TagPill({ text, i }: { text: string; i: number }) {
   const colors = ["#00d4ff","#7c6fff","#00ff99","#ff6b35","#ff3e8a","#ffd700","#00d4ff","#7c6fff"];
   const c = colors[i % colors.length];
   return (
