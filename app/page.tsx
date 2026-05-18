@@ -445,7 +445,7 @@ function ResearchPage() {
 function TimelinePage({ inline }) {
   const [ref, visible] = useInView(0.05);
   return (
-    <section ref={ref} style={{ padding: inline ? "120px 2.5rem" : "120px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: inline ? 120 : 120 }}>
+    <section ref={ref || undefined} style={{ padding: inline ? "120px 2.5rem" : "120px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: inline ? 120 : 120 }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
           <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
