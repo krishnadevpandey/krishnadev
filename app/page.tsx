@@ -87,7 +87,6 @@ const CV_DATA = {
   skills: [
     { cat: "Characterization", items: "Laser Doppler Vibrometry · Precision Multiferroic · DC Probe Station · XRD · FESEM · Optical Profilometer" },
     { cat: "Computation", items: "DFT (Materials Studio) · COMSOL Multiphysics · Thermo-Calc · VESTA" },
-    { cat: "Fabrication", items: "Lithography · Thin-film deposition · Etching · Class 100/1000 cleanroom" },
     { cat: "Software & Languages", items: "Python · MATLAB · Origin · LaTeX" },
   ],
 };
@@ -126,11 +125,14 @@ function GridBg() {
 
 // ─── Navigation ─────────────────────────────────────────────────────────────
 
-function Nav({ page, setPage }) {
+function Nav({ page, setPage }: { page: string; setPage: (page: string) => void }) {
   const [scrolled, setScrolled] = useState(false);
+
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
+
     window.addEventListener("scroll", fn);
+
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
@@ -331,7 +333,14 @@ function ProjectBlock({ p, i }) {
         <svg width="100%" height="100%" viewBox="0 0 400 225" style={{ position: "absolute", opacity: 0.3 }}>
           {[0,1,2,3,4,5,6,7].map(row =>
             [0,1,2,3,4,5,6,7,8,9].map(col => (
-              <circle key={`${row}-${col}`} cx={col*45+22} cy={row*30+15} r={1.5} fill={p.color} opacity={Math.random() > 0.6 ? 1 : 0.2} />
+              <circle
+  key={`${row}-${col}`}
+  cx={col * 45 + 22}
+  cy={row * 30 + 15}
+  r={1.5}
+  fill={p.color}
+  opacity={(row + col) % 2 === 0 ? 1 : 0.2}
+/>
             ))
           )}
           {[0,1,2,3].map(i => <line key={i} x1={i*120} y1={0} x2={i*120} y2={225} stroke={p.color} strokeWidth={0.5} opacity={0.15} />)}
