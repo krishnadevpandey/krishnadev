@@ -111,7 +111,7 @@ function useInView(threshold = 0.15) {
     return () => obs.disconnect();
   }, []);
 
-  return [ref, visible] as const;
+  return [ref, visible];
 }
 
 // ─── Tiny animated grid background ─────────────────────────────────────────
@@ -135,7 +135,7 @@ function GridBg() {
 
 // ─── Navigation ─────────────────────────────────────────────────────────────
 
-function Nav({ page, setPage }: { page: string; setPage: (page: string) => void }) {
+function Nav({ page, setPage }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -184,7 +184,7 @@ function Nav({ page, setPage }: { page: string; setPage: (page: string) => void 
 
 // ─── HOME PAGE ───────────────────────────────────────────────────────────────
 
-function TagPill({ text, i }: { text: string; i: number }) {
+function TagPill({ text, i }) {
   const colors = ["#00d4ff","#7c6fff","#00ff99","#ff6b35","#ff3e8a","#ffd700","#00d4ff","#7c6fff"];
   const c = colors[i % colors.length];
   return (
@@ -204,7 +204,7 @@ function TagPill({ text, i }: { text: string; i: number }) {
   );
 }
 
-function Hero({ setPage }: { setPage: (page: string) => void }) {
+function Hero({ setPage }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setTimeout(() => setMounted(true), 100); }, []);
 
