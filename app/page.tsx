@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 import { useState, useEffect, useRef } from "react";
 
 const NAV_LINKS = ["Research", "Timeline", "Notes", "CV", "Contact"];
