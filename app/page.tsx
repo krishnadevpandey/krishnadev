@@ -194,7 +194,7 @@ function TagPill({ text, i }: { text: string; i: number }) {
   );
 }
 
-function Hero({ setPage }) {
+function Hero({ setPage }: { setPage: (page: string) => void }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setTimeout(() => setMounted(true), 100); }, []);
 
