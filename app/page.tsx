@@ -269,7 +269,7 @@ function PhilosophySection() {
   const [ref, visible] = useInView(0.2);
   const chain = ["Materials", "→", "Interfaces", "→", "Thin Films", "→", "Devices", "→", "Intelligent Systems"];
   return (
-    <section ref={ref} style={{ padding: "120px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+    <section ref={ref || undefined} style={{ padding: "120px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 60 }}>
           <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
@@ -308,7 +308,7 @@ function ProjectBlock({ p, i }) {
   const [ref, visible] = useInView(0.1);
   const [hovered, setHovered] = useState(false);
   return (
-    <div ref={ref} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{
+    <div ref={ref || undefined} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{
       borderTop: "1px solid rgba(255,255,255,0.06)",
       padding: "64px 2.5rem",
       display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center",
@@ -376,7 +376,7 @@ function ProjectBlock({ p, i }) {
 function QuestionsSection() {
   const [ref, visible] = useInView(0.1);
   return (
-    <section ref={ref} style={{ padding: "120px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section ref={ref || undefined} style={{ padding: "120px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 60 }}>
           <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
