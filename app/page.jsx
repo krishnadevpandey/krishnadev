@@ -1,10 +1,33 @@
 "use client";
 // @ts-nocheck
 import { useState, useEffect, useRef } from "react";
+const COLORS = {
+  heading: "#ffffff",
+  body: "#e2e8f0",
+  muted: "#cbd5e1",
+  nav: "#f8fafc"
+};
 
-const NAV_LINKS = ["Research", "Timeline", "Notes", "CV", "Contact"];
+const NAV_LINKS = ["Research", "Notes", "CV", "Contact"];
 
 const TAGS = ["Piezoelectric and Ferroelectric Thin Films", "Functional Oxide Materials", "Micro-Electro-Mechanical Systems", "Interface Engineering", "Device Physics"];
+const AFFILIATIONS = [
+  {
+    name: "IISc Bangalore",
+    subtitle: "Summer 2025 and Thesis 2026",
+    logo: "/logos/iisc.png",
+  },
+  {
+    name: "MANIT Bhopal",
+    subtitle: "2022–2026",
+    logo: "/logos/manit.png",
+  },
+  {
+    name: "DRDO",
+    subtitle: "Winter 2024",
+    logo: "/logos/drdo.png",
+  },
+];
 
 const PROJECTS = [
   {
@@ -56,16 +79,6 @@ const QUESTIONS = [
   "What limits scaling in piezoelectric thin-film devices?",
   "How do buffer layer crystallography choices propagate to device-level response?",
 ];
-
-const TIMELINE = [
-  { year: "2024", label: "DRDO Research Exposure", sub: "CdZnTe crystal growth · PMN-PT poling · SSPL Delhi", side: "left" },
-  { year: "2025 Q1", label: "PZT Synthesis & DFT", sub: "Phase formation · Band gap calculations · MANIT Bhopal", side: "right" },
-  { year: "2025 Q2", label: "IISc Summer Internship", sub: "d₃₃ extraction · AlN/PZT LDV · Class 100 cleanroom", side: "left" },
-  { year: "2025 Q4", label: "Samsung Fellowship", sub: "India Semiconductor Workforce Development Program", side: "right" },
-  { year: "2026", label: "Thin-Film Device Characterization", sub: "4-inch wafer yield · P–E loops · PMUT cantilevers", side: "left" },
-  { year: "2026", label: "IISc B.Tech Thesis", sub: "Full device physics stack · d₃₁ · e₃₁ · interface engineering", side: "right" },
-];
-
 const NOTES = [
   { title: "Understanding P–E Loops", tag: "Ferroelectrics", desc: "A deep dive into polarization–electric field hysteresis and what loop shape reveals about domain dynamics, leakage, and fatigue mechanisms.", date: "Coming soon" },
   { title: "Why Substrate Bending Affects d₃₃", tag: "Metrology", desc: "Mechanical analysis of how substrate compliance convolves with the true thin-film piezoelectric response in LDV measurements.", date: "Coming soon" },
@@ -76,7 +89,7 @@ const NOTES = [
 
 const CV_DATA = {
   education: [
-    { inst: "Maulana Azad National Institute of Technology, Bhopal", degree: "B.Tech — Materials and Metallurgical Engineering", year: "2022–2026", detail: "GPA 8.16/10 · Rank 3 / 61" },
+    { inst: "Maulana Azad National Institute of Technology, Bhopal", degree: "B.Tech — Materials and Metallurgical Engineering", year: "2022–2026", detail: "GPA 8.19/10 · Rank 3 / 61" },
   ],
   honors: [
     "Rank 3 of 61 — top 5% of graduating class",
@@ -162,7 +175,7 @@ function Nav({ page, setPage }) {
         display: "flex", flexDirection: "column", gap: 2,
       }}>
         <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.12em", color: "#fff", textTransform: "uppercase" }}>Krishnadev</span>
-        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, fontWeight: 400, letterSpacing: "0.2em", color: "rgba(255,255,255,0.35)", textTransform: "uppercase" }}>Materials · MEMS · Devices</span>
+        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, fontWeight: 400, letterSpacing: "0.2em", color: COLORS.body, textTransform: "uppercase" }}>Materials · MEMS · Devices</span>
       </button>
       <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
         {NAV_LINKS.map(l => (
@@ -171,7 +184,7 @@ function Nav({ page, setPage }) {
             fontFamily: "'Space Grotesk', sans-serif",
             fontSize: 12, fontWeight: 500, letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: page === l.toLowerCase() ? "#00d4ff" : "rgba(255,255,255,0.5)",
+            color: page === l.toLowerCase() ? "#00d4ff" : COLORS.nav,
             transition: "color 0.3s",
             padding: "4px 0",
             borderBottom: page === l.toLowerCase() ? "1px solid #00d4ff" : "1px solid transparent",
@@ -237,7 +250,7 @@ function Hero({ setPage }) {
         <p style={{
           fontFamily: "'Space Grotesk', sans-serif",
           fontSize: 16, fontWeight: 400, lineHeight: 1.8,
-          color: "rgba(255,255,255,0.5)",
+          color: COLORS.body,
           maxWidth: 560, marginBottom: 48,
         }}>
           Undergraduate researcher working at the intersection of piezoelectric and ferroelectric thin films, MEMS integration, and structure–property correlations in functional oxides.
@@ -268,21 +281,186 @@ function Hero({ setPage }) {
       {/* Scroll indicator */}
       <div style={{ position: "absolute", bottom: 40, left: "2.5rem", display: "flex", alignItems: "center", gap: 12, opacity: mounted ? 0.4 : 0, transition: "opacity 2s 1s" }}>
         <div style={{ width: 1, height: 40, background: "rgba(255,255,255,0.4)" }} />
-        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>Scroll</span>
+        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: COLORS.nav }}>Scroll</span>
       </div>
     </section>
   );
 }
+function ResearchStatement() {
+  return (
+    <section
+      style={{
+        padding: "50px 2.5rem",
+        borderTop: "1px solid rgba(255,255,255,0.06)",
+      }}
+    >
+      <div style={{ maxWidth: 1600, margin: "0 auto" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            marginBottom: 60,
+          }}
+        >
+          <div
+            style={{
+              width: 40,
+              height: 1,
+              background: "rgba(255,255,255,0.2)",
+            }}
+          />
+          <span
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 11,
+              letterSpacing: "0.25em",
+              textTransform: "uppercase",
+              color: COLORS.nav,
+            }}
+          >
+            Research Statement
+          </span>
+        </div>
 
+        <p
+  style={{
+    maxWidth: 850,
+    color: COLORS.body,
+    fontSize: 17,
+    lineHeight: 1.8,
+    fontWeight: 300,
+  }}
+>
+  Every functional device begins with a material. Understanding how processing, interfaces, and microstructure shape device behavior is the driving force behind my research.
+
+</p>
+      </div>
+    </section>
+  );
+}
+function Affiliations() {
+  return (
+    <section
+      style={{
+        padding: "50px 2.5rem",
+        borderTop: "1px solid rgba(255,255,255,0.06)",
+      }}
+    >
+      <div style={{ maxWidth: 1500, margin: "0 auto" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+            marginBottom: 80,
+          }}
+        >
+          <div
+            style={{
+              width: 40,
+              height: 1,
+              background: "rgba(255,255,255,0.2)",
+            }}
+          />
+
+          <span
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 11,
+              letterSpacing: "0.25em",
+              textTransform: "uppercase",
+              color: COLORS.nav,
+            }}
+          >
+            Affiliations
+          </span>
+        </div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 5,
+            textAlign: "center",
+            alignItems: "start",
+          }}
+        >
+          {AFFILIATIONS.map((a) => (
+  <div
+    key={a.name}
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    }}
+  >
+    <div
+      style={{
+        height: 150,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: 8,
+      }}
+    >
+      <img
+        src={a.logo}
+        alt={a.name}
+        style={{
+          height:
+            a.name === "IISc Bangalore"
+              ? 110
+              : a.name === "MANIT Bhopal"
+              ? 95
+              : 85,
+          width: "auto",
+          objectFit: "contain",
+        }}
+      />
+    </div>
+              <div
+                style={{
+                  color: COLORS.heading,
+                  fontSize: 13,
+                  fontWeight: 400,
+                  lineHeight: 1.4,
+                  marginBottom: 12,
+                }}
+              >
+                {a.name}
+              </div>
+
+              <div
+              style={{
+                color: COLORS.muted,
+                fontSize: 13,
+                lineHeight: 1.5,
+                  letterSpacing: "0.03em",
+                  }}
+                    >
+                  {a.subtitle}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 function PhilosophySection() {
   const [ref, visible] = useInView(0.2);
-  const chain = ["Materials", "→", "Interfaces", "→", "Thin Films", "→", "Devices", "→", "Intelligent Systems"];
+  const chain = ["Materials", "→", "Interfaces", "→", "Thin Films", "→", "Devices"];
   return (
-    <section ref={ref || undefined} style={{ padding: "120px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+    <section ref={ref || undefined} style={{ padding: "50px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
+      <div style={{ maxWidth: 1600, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 60 }}>
           <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)" }}>Research Philosophy</span>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
+fontWeight: 600,
+letterSpacing: "-0.03em",
+textTransform: "none",
+color: COLORS.heading, color: COLORS.nav}}>Research Philosophy</span>
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "12px 4px", alignItems: "baseline" }}>
           {chain.map((w, i) => (
@@ -290,7 +468,7 @@ function PhilosophySection() {
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: w === "→" ? "clamp(2rem,4vw,4rem)" : "clamp(2.5rem,5vw,5rem)",
               fontWeight: 300,
-              color: w === "→" ? "rgba(255,255,255,0.15)" : (i === 0 || i === chain.length - 1) ? "#00d4ff" : "#fff",
+              color: w === "→" ? "rgba(255,255,255,0.4)" : (i === 0 || i === chain.length - 1) ? "#00d4ff" : "#fff",
               fontStyle: w === "→" ? "normal" : "italic",
               opacity: visible ? 1 : 0,
               transform: visible ? "none" : "translateY(20px)",
@@ -302,7 +480,7 @@ function PhilosophySection() {
         <p style={{
           marginTop: 48,
           fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: 15, lineHeight: 1.8, color: "rgba(255,255,255,0.4)",
+          fontSize: 15, lineHeight: 1.8, color: COLORS.body,
           maxWidth: 600,
           opacity: visible ? 1 : 0, transition: "opacity 1s 0.7s",
         }}>
@@ -371,10 +549,10 @@ function ProjectBlock({ p, i }) {
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: p.color }}>{p.lab}</span>
         </div>
         <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 300, color: "#fff", margin: "0 0 1.2rem", lineHeight: 1.2, fontStyle: "italic" }}>{p.title}</h3>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, lineHeight: 1.8, color: "rgba(255,255,255,0.5)", marginBottom: 24 }}>{p.desc}</p>
+        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, lineHeight: 1.8, color: COLORS.body, marginBottom: 24 }}>{p.desc}</p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
           {p.tags.map(t => (
-            <span key={t} style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.35)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "4px 10px" }}>{t}</span>
+            <span key={t} style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: COLORS.body, border: "1px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "4px 10px" }}>{t}</span>
           ))}
         </div>
       </div>
@@ -385,11 +563,15 @@ function ProjectBlock({ p, i }) {
 function QuestionsSection() {
   const [ref, visible] = useInView(0.1);
   return (
-    <section ref={ref || undefined} style={{ padding: "120px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+    <section ref={ref || undefined} style={{ padding: "50px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 60 }}>
           <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)" }}>Current Questions</span>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
+fontWeight: 600,
+letterSpacing: "-0.03em",
+textTransform: "none",
+color: COLORS.heading, color: COLORS.body }}>Current Questions</span>
         </div>
         {QUESTIONS.map((q, i) => (
           <div key={i} style={{
@@ -401,7 +583,7 @@ function QuestionsSection() {
             transition: `all 0.7s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s`,
           }}>
             <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, color: "#00d4ff", minWidth: 24, paddingTop: 4 }}>0{i + 1}</span>
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.1rem,2vw,1.5rem)", fontWeight: 300, color: "rgba(255,255,255,0.75)", margin: 0, lineHeight: 1.5, fontStyle: "italic" }}>{q}</p>
+            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.1rem,2vw,1.5rem)", fontWeight: 300, color: COLORS.body, margin: 0, lineHeight: 1.5, fontStyle: "italic" }}>{q}</p>
           </div>
         ))}
       </div>
@@ -413,18 +595,23 @@ function HomePage({ setPage }) {
   return (
     <>
       <Hero setPage={setPage} />
+      <ResearchStatement />
+      <Affiliations />
       <PhilosophySection />
       <section style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
         <div style={{ padding: "80px 2.5rem 0" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
             <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)" }}>Featured Research</span>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
+fontWeight: 600,
+letterSpacing: "-0.03em",
+textTransform: "none",
+color: COLORS.heading, color: COLORS.nav }}>Featured Research</span>
           </div>
         </div>
         {PROJECTS.map((p, i) => <ProjectBlock key={p.id} p={p} i={i} />)}
       </section>
       <QuestionsSection />
-      <TimelinePage inline />
     </>
   );
 }
@@ -437,11 +624,15 @@ function ResearchPage() {
       <div style={{ padding: "60px 2.5rem 0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
           <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Research</span>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
+fontWeight: 600,
+letterSpacing: "-0.03em",
+textTransform: "none",
+color: COLORS.heading, color: "#00d4ff" }}>Research</span>
         </div>
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Project Archive</h1>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.4)", maxWidth: 560, lineHeight: 1.8, marginBottom: 40 }}>
-          A living record of research on functional materials, thin-film engineering, and piezoelectric devices for next-generation technologies.
+        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: COLORS.body, maxWidth: 560, lineHeight: 1.8, marginBottom: 40 }}>
+          A living record of research spanning functional materials, interfaces, thin films, and devices.
         </p>
       </div>
       {PROJECTS.map((p, i) => <ProjectBlock key={p.id} p={p} i={i} />)}
@@ -449,58 +640,6 @@ function ResearchPage() {
     </div>
   );
 }
-
-// ─── TIMELINE PAGE ───────────────────────────────────────────────────────────
-
-function TimelinePage({ inline }) {
-  const [ref, visible] = useInView(0.05);
-  return (
-    <section ref={ref || undefined} style={{ padding: inline ? "120px 2.5rem" : "120px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: inline ? 120 : 120 }}>
-      <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-          <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)" }}>Timeline</span>
-        </div>
-        <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2rem,4vw,3.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 64px", fontStyle: "italic" }}>Research Milestones</h2>
-
-        {/* Central line */}
-        <div style={{ position: "relative" }}>
-          <div style={{ position: "absolute", left: "50%", top: 0, bottom: 0, width: 1, background: "rgba(255,255,255,0.08)", transform: "translateX(-50%)" }} />
-          {TIMELINE.map((item, i) => (
-            <div key={i} style={{
-              display: "flex",
-              justifyContent: item.side === "left" ? "flex-end" : "flex-start",
-              marginBottom: 48,
-              paddingRight: item.side === "left" ? "calc(50% + 40px)" : 0,
-              paddingLeft: item.side === "right" ? "calc(50% + 40px)" : 0,
-              opacity: visible ? 1 : 0,
-              transform: visible ? "none" : `translateX(${item.side === "left" ? 20 : -20}px)`,
-              transition: `all 0.7s cubic-bezier(0.16,1,0.3,1) ${i * 0.12}s`,
-              position: "relative",
-            }}>
-              {/* Dot */}
-              <div style={{
-                position: "absolute",
-                left: "50%", top: 16,
-                width: 8, height: 8,
-                borderRadius: "50%",
-                background: "#00d4ff",
-                transform: "translate(-50%, -50%)",
-                boxShadow: "0 0 12px rgba(0,212,255,0.5)",
-              }} />
-              <div>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.2em", color: "#00d4ff", marginBottom: 6 }}>{item.year}</div>
-                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.3rem", fontWeight: 300, color: "#fff", marginBottom: 4, fontStyle: "italic" }}>{item.label}</div>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.35)", lineHeight: 1.6 }}>{item.sub}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 // ─── NOTES PAGE ──────────────────────────────────────────────────────────────
 
 function NotesPage() {
@@ -510,10 +649,14 @@ function NotesPage() {
       <div style={{ padding: "40px 2.5rem 80px", maxWidth: 900, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
           <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Technical Notes</span>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
+fontWeight: 600,
+letterSpacing: "-0.03em",
+textTransform: "none",
+color: COLORS.heading, color: "#00d4ff" }}>Technical Notes</span>
         </div>
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Field Notes</h1>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.4)", maxWidth: 560, lineHeight: 1.8, marginBottom: 64 }}>
+        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: COLORS.body, maxWidth: 560, lineHeight: 1.8, marginBottom: 64 }}>
           Writing as a tool for thinking. Short technical articles on ferroelectrics, measurement methods, and materials physics — aimed at researchers and curious engineers.
         </p>
         {NOTES.map((note, i) => (
@@ -533,10 +676,10 @@ function NotesPage() {
                 }}>{note.tag}</span>
               </div>
               <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.5rem", fontWeight: 300, color: "#fff", margin: "0 0 10px", fontStyle: "italic" }}>{note.title}</h3>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.4)", margin: 0, lineHeight: 1.7, maxWidth: 560 }}>{note.desc}</p>
+              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: COLORS.body, margin: 0, lineHeight: 1.7, maxWidth: 560 }}>{note.desc}</p>
             </div>
             <div style={{ textAlign: "right", paddingTop: 4 }}>
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.2)", letterSpacing: "0.1em" }}>{note.date}</span>
+              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, color: COLORS.muted, letterSpacing: "0.1em" }}>{note.date}</span>
             </div>
           </div>
         ))}
@@ -559,10 +702,14 @@ function CVPage() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
               <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Curriculum Vitae</span>
+              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
+fontWeight: 600,
+letterSpacing: "-0.03em",
+textTransform: "none",
+color: COLORS.heading, color: "#00d4ff" }}>Curriculum Vitae</span>
             </div>
             <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4rem)", fontWeight: 300, color: "#fff", margin: "0 0 0.5rem", fontStyle: "italic" }}>Krishnadev Pandey</h1>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.4)", margin: 0 }}>Materials and Metallurgical Engineering · MANIT Bhopal · IISc Bangalore</p>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: COLORS.body, margin: 0 }}>Materials and Metallurgical Engineering · MANIT Bhopal · IISc Bangalore</p>
           </div>
           <a href="#" onClick={e => e.preventDefault()} style={{
             background: "none", border: "1px solid rgba(0,212,255,0.4)", color: "#00d4ff",
@@ -646,10 +793,14 @@ function ContactPage() {
       <div style={{ padding: "40px 2.5rem 100px", maxWidth: 700, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
           <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Contact</span>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
+fontWeight: 600,
+letterSpacing: "-0.03em",
+textTransform: "none",
+color: COLORS.heading, color: "#00d4ff" }}>Contact</span>
         </div>
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Get in Touch</h1>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.4)", maxWidth: 480, lineHeight: 1.8, marginBottom: 64 }}>
+        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: COLORS.body, maxWidth: 480, lineHeight: 1.8, marginBottom: 64 }}>
           Open to research collaborations, internship discussions, and conversations on piezoelectric devices, MEMS, and functional materials.
         </p>
 
@@ -687,15 +838,15 @@ function Footer({ setPage }) {
   return (
     <footer style={{ borderTop: "1px solid rgba(255,255,255,0.06)", padding: "48px 2.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 20 }}>
       <div>
-        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, letterSpacing: "0.12em", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", marginBottom: 4 }}>Krishnadev Pandey</div>
-        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.2)", letterSpacing: "0.1em" }}>Materials · MEMS · Functional Devices · 2026</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, letterSpacing: "0.12em", color: COLORS.body, textTransform: "uppercase", marginBottom: 4 }}>Krishnadev Pandey</div>
+        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, color: COLORS.muted, letterSpacing: "0.1em" }}>Materials · MEMS · Functional Devices · 2026</div>
       </div>
       <div style={{ display: "flex", gap: "1.5rem" }}>
         {NAV_LINKS.map(l => (
           <button key={l} onClick={() => { setPage(l.toLowerCase()); window.scrollTo(0,0); }} style={{
             background: "none", border: "none", cursor: "pointer",
             fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.12em",
-            textTransform: "uppercase", color: "rgba(255,255,255,0.25)",
+            textTransform: "uppercase", color: COLORS.nav,
             transition: "color 0.3s", padding: 0,
           }}>{l}</button>
         ))}
@@ -712,11 +863,6 @@ export default function App() {
   const pages = {
     home: <HomePage setPage={setPage} />,
     research: <ResearchPage />,
-    timeline: (
-      <div style={{ paddingTop: 64 }}>
-        <TimelinePage />
-      </div>
-    ),
     notes: <NotesPage />,
     cv: <CVPage />,
     contact: <ContactPage />,
