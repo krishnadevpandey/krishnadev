@@ -33,9 +33,9 @@ const PROJECTS = [
   {
     id: "01",
     title: "PZT Interface Engineering",
-    lab: "CeNSE · IISc Bangalore · 2026",
-    desc: "Investigating interface-driven degradation and piezoelectric response variation in thin-film PZT stacks. Characterizing buffer layers (TiO₂ rutile/anatase, LaNiO₃) using temperature-dependent electrical measurements and wafer-level yield mapping on 4-inch (100) and (111)-oriented PZT wafers.",
-    tags: ["Ferroelectrics", "Interface Engineering", "Wafer Yield", "P–E Loops"],
+    lab: "Centre for Nano Science and Engineering · IISc Bangalore · 2026",
+    desc: "Investigating how buffer-layer design, electrode architecture, and crystallographic orientation influence the electrical, piezoelectric, and electromechanical performance of PZT thin-film devices. Combining wafer-scale characterization with device-level measurements to establish structure–property–performance relationships in piezoelectric MEMS platforms.",
+    tags: ["Piezo-MEMS Devices", "Interface Engineering","Functional Oxide Heterostructures", "Wafer Yield"],
     color: "#00d4ff",
     gradient: "linear-gradient(135deg, #001a22 0%, #00141c 100%)",
     accent: "rgba(0,212,255,0.08)",
@@ -43,9 +43,9 @@ const PROJECTS = [
   {
     id: "02",
     title: "Piezoelectric d₃₃ Extraction",
-    lab: "CeNSE · IISc Bangalore · 2025",
+    lab: "Centre for Nano Science and Engineering · IISc Bangalore · 2025",
     desc: "Designing novel electrode geometries to minimize substrate bending and improve accuracy of thin-film piezoelectric coefficient extraction. Measuring d₃₃ in AlN, AlScN, and PZT on Si/Mo substrates using Laser Doppler Vibrometry with FEM validation in COMSOL.",
-    tags: ["LDV", "COMSOL FEM", "d₃₃", "Electrode Design"],
+    tags: ["Electrode Design", "Piezoelectric Thin Films", "Finite-Element Modeling"],
     color: "#7c6fff",
     gradient: "linear-gradient(135deg, #0d001a 0%, #08001a 100%)",
     accent: "rgba(124,111,255,0.08)",
@@ -55,7 +55,7 @@ const PROJECTS = [
     title: "First-Principles Analysis of PZT",
     lab: "MANIT Bhopal · 2025",
     desc: "Combining sol-gel synthesis with density functional theory to investigate phase formation and electronic structure in lead zirconate titanate. Confirming perovskite phase via XRD, analyzing grain morphology via FESEM, and computing band gaps and density of states using Materials Studio.",
-    tags: ["DFT", "XRD", "SEM", "Materials Studio"],
+    tags: ["Perovskite Oxides", "Structure–Property Correlations", "Atomistic Modeling", "Electronic Properties"],
     color: "#00ff99",
     gradient: "linear-gradient(135deg, #00120a 0%, #000e07 100%)",
     accent: "rgba(0,255,153,0.08)",
@@ -63,9 +63,9 @@ const PROJECTS = [
   {
     id: "04",
     title: "Crystal Growth & Poling — DRDO",
-    lab: "SSPL · DRDO Delhi · 2024–25",
+    lab: "Solid State Physics Laboratory · DRDO Delhi · 2024–25",
     desc: "Analyzing orientation selection for CdZnTe single-crystal growth using (111) seeds to suppress twinning. Evaluating pulsed versus DC poling strategies on PMN-PT single crystals, and analyzing binary/ternary phase equilibria using Thermo-Calc.",
-    tags: ["PMN-PT", "CdZnTe", "Thermo-Calc", "Phase Diagrams"],
+    tags: ["Single-Crystal Growth", "Functional Materials", "Poling", "Phase Stability"],
     color: "#ff6b35",
     gradient: "linear-gradient(135deg, #1a0800 0%, #140700 100%)",
     accent: "rgba(255,107,53,0.08)",
@@ -836,20 +836,96 @@ color: COLORS.heading, color: "#00d4ff" }}>Contact</span>
 
 function Footer({ setPage }) {
   return (
-    <footer style={{ borderTop: "1px solid rgba(255,255,255,0.06)", padding: "48px 2.5rem", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 20 }}>
-      <div>
-        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 600, letterSpacing: "0.12em", color: COLORS.body, textTransform: "uppercase", marginBottom: 4 }}>Krishnadev Pandey</div>
-        <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, color: COLORS.muted, letterSpacing: "0.1em" }}>Materials · MEMS · Functional Devices · 2026</div>
+    <footer
+      style={{
+        borderTop: "1px solid rgba(255,255,255,0.06)",
+        padding: "48px 2.5rem",
+      }}
+    >
+      {/* Flag Counter */}
+      <div
+        style={{
+          textAlign: "center",
+          marginBottom: 40,
+        }}
+      >
+        <a
+          href="https://info.flagcounter.com/KkmZ"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="https://s01.flagcounter.com/count2/KkmZ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+            alt="Flag Counter"
+            style={{
+              borderRadius: 4,
+            }}
+          />
+        </a>
       </div>
-      <div style={{ display: "flex", gap: "1.5rem" }}>
-        {NAV_LINKS.map(l => (
-          <button key={l} onClick={() => { setPage(l.toLowerCase()); window.scrollTo(0,0); }} style={{
-            background: "none", border: "none", cursor: "pointer",
-            fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.12em",
-            textTransform: "uppercase", color: COLORS.nav,
-            transition: "color 0.3s", padding: 0,
-          }}>{l}</button>
-        ))}
+
+      {/* Footer Content */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: 20,
+        }}
+      >
+        <div>
+          <div
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 12,
+              fontWeight: 600,
+              letterSpacing: "0.12em",
+              color: COLORS.body,
+              textTransform: "uppercase",
+              marginBottom: 4,
+            }}
+          >
+            Krishnadev Pandey
+          </div>
+
+          <div
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 11,
+              color: COLORS.muted,
+              letterSpacing: "0.1em",
+            }}
+          >
+            Materials · MEMS · Functional Devices · 2026
+          </div>
+        </div>
+
+        <div style={{ display: "flex", gap: "1.5rem" }}>
+          {NAV_LINKS.map((l) => (
+            <button
+              key={l}
+              onClick={() => {
+                setPage(l.toLowerCase());
+                window.scrollTo(0, 0);
+              }}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 11,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: COLORS.nav,
+                transition: "color 0.3s",
+                padding: 0,
+              }}
+            >
+              {l}
+            </button>
+          ))}
+        </div>
       </div>
     </footer>
   );
