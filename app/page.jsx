@@ -42,10 +42,10 @@ const PROJECTS = [
   },
   {
     id: "02",
-    title: "Piezoelectric d₃₃ Extraction",
+    title: "Quantitative Electromechanical Characterization of Piezoelectric Thin Films",
     lab: "Centre for Nano Science and Engineering · IISc Bangalore · 2025",
-    desc: "Designing novel electrode geometries to minimize substrate bending and improve accuracy of thin-film piezoelectric coefficient extraction. Measuring d₃₃ in AlN, AlScN, and PZT on Si/Mo substrates using Laser Doppler Vibrometry with FEM validation in COMSOL.",
-    tags: ["Electrode Design", "Piezoelectric Thin Films", "Finite-Element Modeling"],
+    desc: "Developed high-accuracy methodologies for extracting the longitudinal piezoelectric coefficient (d₃₃) in AlN and PZT thin films on Mo/Si substrates. Addressed substrate-bending artifacts, a key limitation in nanoscale electromechanical metrology, through optimized micro-electrode design and validated Laser Doppler Vibrometry (LDV) displacement profiles using coupled multiphysics finite-element simulations in COMSOL.",
+    tags: ["Piezoelectric Metrology", "Electrode Design", "Finite-Element Modeling", "Electromechanical Characterization"],
     color: "#7c6fff",
     gradient: "linear-gradient(135deg, #0d001a 0%, #08001a 100%)",
     accent: "rgba(124,111,255,0.08)",
@@ -549,7 +549,7 @@ function ProjectBlock({ p, i }) {
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: p.color }}>{p.lab}</span>
         </div>
         <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 300, color: "#fff", margin: "0 0 1.2rem", lineHeight: 1.2, fontStyle: "italic" }}>{p.title}</h3>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, lineHeight: 1.8, color: COLORS.body, marginBottom: 24 }}>{p.desc}</p>
+        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, lineHeight: 1.8, color: COLORS.body, marginBottom: 24 }}>{p.desc}</p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
           {p.tags.map(t => (
             <span key={t} style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: COLORS.body, border: "1px solid rgba(255,255,255,0.1)", borderRadius: 2, padding: "4px 10px" }}>{t}</span>
@@ -948,7 +948,6 @@ export default function App() {
     <div style={{ background: "#060608", minHeight: "100vh", color: "#fff", position: "relative" }}>
       {/* Google Fonts */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Grotesk:wght@300;400;500;600&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         ::-webkit-scrollbar { width: 4px; }
