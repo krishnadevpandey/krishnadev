@@ -13,6 +13,11 @@ const NAV_LINKS = ["Research", "Notes", "CV", "Contact"];
 const TAGS = ["Piezoelectric and Ferroelectric Thin Films", "Functional Oxide Materials", "Micro-Electro-Mechanical Systems", "Interface Engineering", "Device Physics"];
 const AFFILIATIONS = [
   {
+    name: "IIT Kanpur",
+    subtitle: "2026–Present",
+    logo: "/logos/iitk.png",
+  },
+  {
     name: "IISc Bangalore",
     subtitle: "Summer 2025 and Thesis 2026",
     logo: "/logos/iisc.png",
@@ -229,7 +234,7 @@ function Hero({ setPage }) {
       <div style={{ maxWidth: 900, opacity: mounted ? 1 : 0, transform: mounted ? "none" : "translateY(30px)", transition: "all 1.2s cubic-bezier(0.16,1,0.3,1)" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
           <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Senior Undergraduate · MANIT Bhopal · IISc Bangalore</span>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>M.Tech Student · IIT Kanpur | Former Research Intern · IISc Bangalore</span>
         </div>
 
         <h1 style={{
@@ -241,10 +246,10 @@ function Hero({ setPage }) {
           margin: "0 0 1.5rem",
           letterSpacing: "-0.02em",
         }}>
-          Engineering Functional<br />
-          <span style={{ color: "#00d4ff", fontStyle: "italic" }}>Materials</span> for<br />
-          Next-Generation<br />
-          Electronic Devices
+          Materials &<br />
+          <span style={{ color: "#00d4ff", fontStyle: "italic" }}>Device Engineering</span><br />
+          for Microsystems &<br />
+          Semiconductors
         </h1>
 
         <p style={{
@@ -268,7 +273,7 @@ function Hero({ setPage }) {
             padding: "14px 32px", borderRadius: 2,
             transition: "all 0.3s",
           }}>View Research</button>
-          <a href="#" onClick={e => e.preventDefault()} style={{
+          <a href="/cv/Krishnadev_CV.pdf" target="_blank" rel="noopener noreferrer" style={{
             background: "none", color: "#fff", border: "1px solid rgba(255,255,255,0.2)", cursor: "pointer",
             fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 500,
             letterSpacing: "0.15em", textTransform: "uppercase",
@@ -380,7 +385,7 @@ function Affiliations() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: "repeat(4, 1fr)",
             gap: 5,
             textAlign: "center",
             alignItems: "start",
@@ -409,7 +414,9 @@ function Affiliations() {
         alt={a.name}
         style={{
           height:
-            a.name === "IISc Bangalore"
+            a.name === "IIT Kanpur"
+              ? 100
+              : a.name === "IISc Bangalore"
               ? 110
               : a.name === "MANIT Bhopal"
               ? 95
@@ -456,11 +463,7 @@ function PhilosophySection() {
       <div style={{ maxWidth: 1600, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 60 }}>
           <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
-fontWeight: 600,
-letterSpacing: "-0.03em",
-textTransform: "none",
-color: COLORS.heading, color: COLORS.nav}}>Research Philosophy</span>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.nav }}>Research Philosophy</span>
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "12px 4px", alignItems: "baseline" }}>
           {chain.map((w, i) => (
@@ -477,15 +480,6 @@ color: COLORS.heading, color: COLORS.nav}}>Research Philosophy</span>
             }}>{w}</span>
           ))}
         </div>
-        <p style={{
-          marginTop: 48,
-          fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: 15, lineHeight: 1.8, color: COLORS.body,
-          maxWidth: 600,
-          opacity: visible ? 1 : 0, transition: "opacity 1s 0.7s",
-        }}>
-          Every device capability traces back to how atoms arrange at an interface. Understanding that hierarchy — from crystal lattice to system performance — is the core of this research agenda.
-        </p>
       </div>
     </section>
   );
@@ -567,11 +561,7 @@ function QuestionsSection() {
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 60 }}>
           <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
-fontWeight: 600,
-letterSpacing: "-0.03em",
-textTransform: "none",
-color: COLORS.heading, color: COLORS.body }}>Current Questions</span>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.body }}>Current Questions</span>
         </div>
         {QUESTIONS.map((q, i) => (
           <div key={i} style={{
@@ -602,11 +592,7 @@ function HomePage({ setPage }) {
         <div style={{ padding: "80px 2.5rem 0" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
             <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
-fontWeight: 600,
-letterSpacing: "-0.03em",
-textTransform: "none",
-color: COLORS.heading, color: COLORS.nav }}>Featured Research</span>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.nav }}>Featured Research</span>
           </div>
         </div>
         {PROJECTS.map((p, i) => <ProjectBlock key={p.id} p={p} i={i} />)}
@@ -624,11 +610,7 @@ function ResearchPage() {
       <div style={{ padding: "60px 2.5rem 0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
           <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
-fontWeight: 600,
-letterSpacing: "-0.03em",
-textTransform: "none",
-color: COLORS.heading, color: "#00d4ff" }}>Research</span>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Research</span>
         </div>
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Project Archive</h1>
         <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: COLORS.body, maxWidth: 560, lineHeight: 1.8, marginBottom: 40 }}>
@@ -649,11 +631,7 @@ function NotesPage() {
       <div style={{ padding: "40px 2.5rem 80px", maxWidth: 900, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
           <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
-fontWeight: 600,
-letterSpacing: "-0.03em",
-textTransform: "none",
-color: COLORS.heading, color: "#00d4ff" }}>Technical Notes</span>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Technical Notes</span>
         </div>
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Field Notes</h1>
         <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: COLORS.body, maxWidth: 560, lineHeight: 1.8, marginBottom: 64 }}>
@@ -702,16 +680,12 @@ function CVPage() {
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
               <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
-fontWeight: 600,
-letterSpacing: "-0.03em",
-textTransform: "none",
-color: COLORS.heading, color: "#00d4ff" }}>Curriculum Vitae</span>
+              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Curriculum Vitae</span>
             </div>
             <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4rem)", fontWeight: 300, color: "#fff", margin: "0 0 0.5rem", fontStyle: "italic" }}>Krishnadev Pandey</h1>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: COLORS.body, margin: 0 }}>Materials and Metallurgical Engineering · MANIT Bhopal · IISc Bangalore</p>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: COLORS.body, margin: 0 }}>Materials Science & Engineering · IIT Kanpur | MANIT Bhopal | IISc Bangalore</p>
           </div>
-          <a href="#" onClick={e => e.preventDefault()} style={{
+          <a href="/cv/Krishnadev_CV.pdf" target="_blank" rel="noopener noreferrer" style={{
             background: "none", border: "1px solid rgba(0,212,255,0.4)", color: "#00d4ff",
             padding: "12px 28px", borderRadius: 2, cursor: "pointer",
             fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase",
@@ -783,8 +757,8 @@ color: COLORS.heading, color: "#00d4ff" }}>Curriculum Vitae</span>
 function ContactPage() {
   const links = [
     { label: "Email", value: "krishnadevpandey417@gmail.com", href: "mailto:krishnadevpandey417@gmail.com", color: "#00d4ff" },
-    { label: "LinkedIn", value: "linkedin.com/in/krishnadev-pandey", href: "#", color: "#7c6fff" },
-    { label: "Google Scholar", value: "Profile — coming soon", href: "#", color: "#00ff99" },
+    { label: "LinkedIn", value: "linkedin.com/in/krishnadev-pandey", href: "https://www.linkedin.com/in/krishnadev-pandey", color: "#7c6fff" },
+    { label: "Google Scholar", value: "Profile — coming soon", href: null, color: "#00ff99" },
     { label: "Location", value: "IISc Bangalore / MANIT Bhopal, India", href: null, color: "#ff6b35" },
   ];
 
@@ -793,11 +767,7 @@ function ContactPage() {
       <div style={{ padding: "40px 2.5rem 100px", maxWidth: 700, margin: "0 auto" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
           <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 32,
-fontWeight: 600,
-letterSpacing: "-0.03em",
-textTransform: "none",
-color: COLORS.heading, color: "#00d4ff" }}>Contact</span>
+          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Contact</span>
         </div>
         <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Get in Touch</h1>
         <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: COLORS.body, maxWidth: 480, lineHeight: 1.8, marginBottom: 64 }}>
@@ -813,7 +783,7 @@ color: COLORS.heading, color: "#00d4ff" }}>Contact</span>
             }}>
               <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)", minWidth: 120 }}>{l.label}</span>
               {l.href ? (
-                <a href={l.href} style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: l.color, textDecoration: "none", letterSpacing: "0.02em" }}>{l.value}</a>
+                <a href={l.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: l.color, textDecoration: "none", letterSpacing: "0.02em" }}>{l.value}</a>
               ) : (
                 <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.5)" }}>{l.value}</span>
               )}
@@ -857,9 +827,8 @@ function Footer({ setPage }) {
           <img
             src="https://s01.flagcounter.com/count2/KkmZ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
             alt="Flag Counter"
-            style={{
-              borderRadius: 4,
-            }}
+            style={{ borderRadius: 4 }}
+            onError={(e) => { e.currentTarget.style.display = "none"; }}
           />
         </a>
       </div>
@@ -946,7 +915,6 @@ export default function App() {
 
   return (
     <div style={{ background: "#060608", minHeight: "100vh", color: "#fff", position: "relative" }}>
-      {/* Google Fonts */}
       <style>{`
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
