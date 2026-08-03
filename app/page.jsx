@@ -464,27 +464,10 @@ function ProjectBlock({ p, i }) {
     width: "100%",
     height: "100%",
     objectFit: "contain",
-    background: "#111",
     transition: "transform 0.4s ease",
     transform: hovered ? "scale(1.03)" : "scale(1)",
   }}
 />
-
-<div
-  style={{
-    position: "absolute",
-    bottom: 20,
-    right: 20,
-    zIndex: 2,
-    fontFamily: "'Cormorant Garamond', serif",
-    fontSize: 72,
-    fontWeight: 300,
-    color: "rgba(255,255,255,0.2)",
-    lineHeight: 1,
-  }}
->
-  {p.id}
-</div>
       </div>
 
       {/* Right: text */}
