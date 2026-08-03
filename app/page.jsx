@@ -362,6 +362,8 @@ function Affiliations() {
               ? 110
               : a.name === "MANIT Bhopal"
               ? 95
+              : a.name === "DRDO"
+              ? 105
               : 85,
           width: "auto",
           objectFit: "contain",
