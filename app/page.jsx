@@ -43,7 +43,7 @@ const PROJECTS = [
     tags: ["Piezo-MEMS Devices", "Interface Engineering","e₃₁,f · d₃₁ Extraction", "Wafer Yield"],
     color: "#00d4ff",
     gradient: "linear-gradient(135deg, #001a22 0%, #00141c 100%)",
-    image: "/images/PMUT.gif",
+    image: "/images/PMUT_reso.gif",
     imageAlt: "PMUT response",
     accent: "rgba(0,212,255,0.08)",
   },
