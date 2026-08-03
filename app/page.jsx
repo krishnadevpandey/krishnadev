@@ -463,7 +463,8 @@ function ProjectBlock({ p, i }) {
   style={{
     width: "100%",
     height: "100%",
-    objectFit: "cover",
+    objectFit: "contain",
+    background: "#111",
     transition: "transform 0.4s ease",
     transform: hovered ? "scale(1.03)" : "scale(1)",
   }}
