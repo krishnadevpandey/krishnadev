@@ -65,6 +65,8 @@ const PROJECTS = [
     tags: ["Mechanochemical Synthesis", "Structure–Property Correlations", "Materials Studio"],
     color: "#00ff99",
     gradient: "linear-gradient(135deg, #00120a 0%, #000e07 100%)",
+    image: "/images/XRD.jpeg",
+    imageAlt: "XRD result",
     accent: "rgba(0,255,153,0.08)",
   },
   {
