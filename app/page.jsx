@@ -53,6 +53,8 @@ const PROJECTS = [
     tags: ["Piezoelectric Metrology", "Electrode Design", "Finite-Element Modeling", "Electromechanical Characterization"],
     color: "#7c6fff",
     gradient: "linear-gradient(135deg, #0d001a 0%, #08001a 100%)",
+    image: "/images/ldv-setup.jpg",
+    imageAlt: "Laser Doppler Vibrometry setup",
     accent: "rgba(124,111,255,0.08)",
   },
   {
@@ -455,29 +457,33 @@ function ProjectBlock({ p, i }) {
         transition: "border-color 0.4s",
         borderColor: hovered ? `${p.color}55` : `${p.color}22`,
       }}>
-        {/* Abstract scientific visual */}
-        <svg width="100%" height="100%" viewBox="0 0 400 225" style={{ position: "absolute", opacity: 0.3 }}>
-          {[0,1,2,3,4,5,6,7].map(row =>
-            [0,1,2,3,4,5,6,7,8,9].map(col => (
-              <circle
-  key={`${row}-${col}`}
-  cx={col * 45 + 22}
-  cy={row * 30 + 15}
-  r={1.5}
-  fill={p.color}
-  opacity={(row + col) % 2 === 0 ? 1 : 0.2}
+        <img
+  src={p.image}
+  alt={p.imageAlt}
+  style={{
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    transition: "transform 0.4s ease",
+    transform: hovered ? "scale(1.03)" : "scale(1)",
+  }}
 />
-            ))
-          )}
-          {[0,1,2,3].map(i => <line key={i} x1={i*120} y1={0} x2={i*120} y2={225} stroke={p.color} strokeWidth={0.5} opacity={0.15} />)}
-          {[0,1,2,3,4].map(i => <line key={i} x1={0} y1={i*55} x2={400} y2={i*55} stroke={p.color} strokeWidth={0.5} opacity={0.15} />)}
-          <circle cx={200} cy={112} r={50} fill="none" stroke={p.color} strokeWidth={1} opacity={0.4} />
-          <circle cx={200} cy={112} r={30} fill="none" stroke={p.color} strokeWidth={0.5} opacity={0.3} strokeDasharray="4 4" />
-          <circle cx={200} cy={112} r={8} fill={p.color} opacity={0.6} />
-        </svg>
-        <div style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
-          <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 80, fontWeight: 300, color: p.color, opacity: 0.15, lineHeight: 1 }}>{p.id}</div>
-        </div>
+
+<div
+  style={{
+    position: "absolute",
+    bottom: 20,
+    right: 20,
+    zIndex: 2,
+    fontFamily: "'Cormorant Garamond', serif",
+    fontSize: 72,
+    fontWeight: 300,
+    color: "rgba(255,255,255,0.2)",
+    lineHeight: 1,
+  }}
+>
+  {p.id}
+</div>
       </div>
 
       {/* Right: text */}
