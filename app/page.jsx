@@ -273,13 +273,7 @@ function Hero({ setPage }) {
             padding: "14px 32px", borderRadius: 2,
             transition: "all 0.3s",
           }}>View Research</button>
-          <a href="/cv/Krishnadev_CV.pdf" target="_blank" rel="noopener noreferrer" style={{
-            background: "none", color: "#fff", border: "1px solid rgba(255,255,255,0.2)", cursor: "pointer",
-            fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, fontWeight: 500,
-            letterSpacing: "0.15em", textTransform: "uppercase",
-            padding: "14px 32px", borderRadius: 2, textDecoration: "none",
-            transition: "all 0.3s", display: "inline-block",
-          }}>Download CV</a>
+    
         </div>
       </div>
 
@@ -685,13 +679,6 @@ function CVPage() {
             <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4rem)", fontWeight: 300, color: "#fff", margin: "0 0 0.5rem", fontStyle: "italic" }}>Krishnadev Pandey</h1>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: COLORS.body, margin: 0 }}>Materials Science & Engineering · IIT Kanpur | MANIT Bhopal | IISc Bangalore</p>
           </div>
-          <a href="/cv/Krishnadev_CV.pdf" target="_blank" rel="noopener noreferrer" style={{
-            background: "none", border: "1px solid rgba(0,212,255,0.4)", color: "#00d4ff",
-            padding: "12px 28px", borderRadius: 2, cursor: "pointer",
-            fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.15em", textTransform: "uppercase",
-            textDecoration: "none", display: "inline-block",
-            transition: "all 0.3s",
-          }}>Download PDF</a>
         </div>
 
         {/* Sections */}
