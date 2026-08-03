@@ -256,7 +256,7 @@ function Hero({ setPage }) {
           fontFamily: "'Space Grotesk', sans-serif",
           fontSize: 16, fontWeight: 400, lineHeight: 1.8,
           color: COLORS.body,
-          maxWidth: 560, marginBottom: 48,
+          maxWidth: 700, marginBottom: 48,
         }}>
           Graduate researcher exploring how materials become functional devices through interface engineering, thin-film synthesis, multiscale characterization, and computational modeling, with applications in MEMS and semiconductor technologies.
         </p>
