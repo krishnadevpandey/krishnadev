@@ -361,7 +361,7 @@ function Affiliations() {
               : a.name === "IISc Bangalore"
               ? 110
               : a.name === "MANIT Bhopal"
-              ? 95
+              ? 100
               : a.name === "DRDO"
               ? 105
               : 85,
