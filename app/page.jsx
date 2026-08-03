@@ -59,10 +59,10 @@ const PROJECTS = [
   },
   {
     id: "03",
-    title: "First-Principles Analysis of PZT",
+    title: "Experimental and First-Principles Investigation of PZT Ceramics",
     lab: "MANIT Bhopal · 2025",
-    desc: "Combining sol-gel synthesis with density functional theory to investigate phase formation and electronic structure in lead zirconate titanate. Confirming perovskite phase via XRD, analyzing grain morphology via FESEM, and computing band gaps and density of states using Materials Studio.",
-    tags: ["Perovskite Oxides", "Structure–Property Correlations", "Atomistic Modeling", "Electronic Properties"],
+    desc: "Developed a mechanochemical route for synthesizing single-phase PZT ceramics and correlated processing-induced microstructural evolution with electronic structure using first-principles DFT. Confirmed perovskite phase formation via XRD, analyzed densification and grain morphology using SEM, and computed the electronic band structure and density of states in Materials Studio.",
+    tags: ["Mechanochemical Synthesis", "Structure–Property Correlations", "Materials Studio"],
     color: "#00ff99",
     gradient: "linear-gradient(135deg, #00120a 0%, #000e07 100%)",
     accent: "rgba(0,255,153,0.08)",
