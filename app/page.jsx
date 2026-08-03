@@ -285,59 +285,7 @@ function Hero({ setPage }) {
     </section>
   );
 }
-function ResearchStatement() {
-  return (
-    <section
-      style={{
-        padding: "50px 2.5rem",
-        borderTop: "1px solid rgba(255,255,255,0.06)",
-      }}
-    >
-      <div style={{ maxWidth: 1600, margin: "0 auto" }}>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 12,
-            marginBottom: 60,
-          }}
-        >
-          <div
-            style={{
-              width: 40,
-              height: 1,
-              background: "rgba(255,255,255,0.2)",
-            }}
-          />
-          <span
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 11,
-              letterSpacing: "0.25em",
-              textTransform: "uppercase",
-              color: COLORS.nav,
-            }}
-          >
-            Research Statement
-          </span>
-        </div>
 
-        <p
-  style={{
-    maxWidth: 850,
-    color: COLORS.body,
-    fontSize: 17,
-    lineHeight: 1.8,
-    fontWeight: 300,
-  }}
->
-  Every functional device begins with a material. Understanding how processing, interfaces, and microstructure shape device behavior is the driving force behind my research.
-
-</p>
-      </div>
-    </section>
-  );
-}
 function Affiliations() {
   return (
     <section
@@ -579,7 +527,6 @@ function HomePage({ setPage }) {
   return (
     <>
       <Hero setPage={setPage} />
-      <ResearchStatement />
       <Affiliations />
       <PhilosophySection />
       <section style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
