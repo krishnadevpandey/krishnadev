@@ -53,7 +53,7 @@ const PROJECTS = [
     tags: ["Piezoelectric Metrology", "Electrode Design", "Finite-Element Modeling", "Electromechanical Characterization"],
     color: "#7c6fff",
     gradient: "linear-gradient(135deg, #0d001a 0%, #08001a 100%)",
-    image: "/images/ldv-setup.jpg",
+    image: "/images/ldv-setup.png",
     imageAlt: "Laser Doppler Vibrometry setup",
     accent: "rgba(124,111,255,0.08)",
   },
