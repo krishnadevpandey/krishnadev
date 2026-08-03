@@ -10,7 +10,7 @@ const COLORS = {
 
 const NAV_LINKS = ["Research", "Notes", "CV", "Contact"];
 
-const TAGS = ["Piezoelectric and Ferroelectric Thin Films", "Functional Oxide Materials", "Micro-Electro-Mechanical Systems", "Interface Engineering", "Device Physics"];
+const TAGS = ["Piezoelectric and Ferroelectric Thin Films", "Micro-Electro-Mechanical Systems", "Semiconductor Devices", "Interface Engineering", "Multiscale Modeling"];
 const AFFILIATIONS = [
   {
     name: "IIT Kanpur",
@@ -258,7 +258,7 @@ function Hero({ setPage }) {
           color: COLORS.body,
           maxWidth: 560, marginBottom: 48,
         }}>
-          Undergraduate researcher working at the intersection of piezoelectric and ferroelectric thin films, MEMS integration, and structure–property correlations in functional oxides.
+          Graduate researcher exploring how materials become functional devices through interface engineering, thin-film synthesis, multiscale characterization, and computational modeling, with applications in MEMS and semiconductor technologies.
         </p>
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 48 }}>
