@@ -73,12 +73,14 @@ const PROJECTS = [
   },
   {
     id: "04",
-    title: "Crystal Growth & Poling — DRDO",
+    title: "Crystal Growth & Poling of Single Crystals",
     lab: "Solid State Physics Laboratory · DRDO Delhi · 2024–25",
-    desc: "Analyzing orientation selection for CdZnTe single-crystal growth using (111) seeds to suppress twinning. Evaluating pulsed versus DC poling strategies on PMN-PT single crystals, and analyzing binary/ternary phase equilibria using Thermo-Calc.",
-    tags: ["Single-Crystal Growth", "Functional Materials", "Poling", "Phase Stability"],
+    desc: "Investigated crystal-growth and poling strategies for CdZnTe and PMN-PT single crystals. Optimized Bridgman growth through (111) seed orientation to suppress twinning, compared AC and DC poling using d₃₃ measurements, and performed CALPHAD-based modeling of binary and ternary phase equilibria using Thermo-Calc.",
+    tags: ["Single-Crystal Growth", "Poling", "Thermo-Calc", "Phase Stability"],
     color: "#ff6b35",
     gradient: "linear-gradient(135deg, #1a0800 0%, #140700 100%)",
+    image: "/images/PMN-PT.png",
+    imageAlt: "PMN-PT crystal",
     accent: "rgba(255,107,53,0.08)",
   },
 ];
