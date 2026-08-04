@@ -322,7 +322,8 @@ function Affiliations() {
           <span
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 11,
+              fontSize: 14,
+              fontWeight: 600,
               letterSpacing: "0.25em",
               textTransform: "uppercase",
               color: COLORS.nav,
