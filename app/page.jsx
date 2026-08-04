@@ -789,17 +789,6 @@ function Footer({ setPage }) {
           >
             Krishnadev Pandey
           </div>
-
-          <div
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 11,
-              color: COLORS.muted,
-              letterSpacing: "0.1em",
-            }}
-          >
-            Research · Engineering · Innovation
-          </div>
         </div>
 
         <div style={{ display: "flex", gap: "1.5rem" }}>
