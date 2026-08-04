@@ -551,10 +551,7 @@ function ResearchPage() {
           <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Research</span>
         </div>
-        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Project Archive</h1>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: COLORS.body, maxWidth: 560, lineHeight: 1.8, marginBottom: 40 }}>
-          A living record of research spanning functional materials, interfaces, thin films, and devices.
-        </p>
+        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Selected Work</h1>
       </div>
       {PROJECTS.map((p, i) => <ProjectBlock key={p.id} p={p} i={i} />)}
       <QuestionsSection />
