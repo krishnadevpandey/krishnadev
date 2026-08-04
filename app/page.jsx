@@ -188,7 +188,7 @@ function Nav({ page, setPage }) {
         display: "flex", flexDirection: "column", gap: 2,
       }}>
         <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.12em", color: "#fff", textTransform: "uppercase" }}>Krishnadev</span>
-        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, fontWeight: 400, letterSpacing: "0.2em", color: COLORS.body, textTransform: "uppercase" }}>Materials · MEMS · Devices</span>
+        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, fontWeight: 400, letterSpacing: "0.2em", color: COLORS.body, textTransform: "uppercase" }}>Materials · Microsystems · Semiconductors</span>
       </button>
       <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
         {NAV_LINKS.map(l => (
@@ -369,9 +369,9 @@ function Affiliations() {
               : a.name === "IISc Bangalore"
               ? 110
               : a.name === "MANIT Bhopal"
-              ? 100
+              ? 103
               : a.name === "DRDO"
-              ? 105
+              ? 100
               : 85,
           width: "auto",
           objectFit: "contain",
