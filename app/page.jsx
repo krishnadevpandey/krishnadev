@@ -86,11 +86,11 @@ const PROJECTS = [
 ];
 
 const QUESTIONS = [
-  "Why do interfaces degrade in ultra-thin ferroelectric stacks?",
-  "How reliable are LDV-based d₃₃ extraction methods at the nanoscale?",
-  "Can AlN and ferroelectrics coexist in hybrid MEMS systems?",
-  "What limits scaling in piezoelectric thin-film devices?",
-  "How do buffer layer crystallography choices propagate to device-level response?",
+  "When does an interface stop being passive and start dictating device physics?",
+  "How do we distinguish intrinsic material properties from measurement artifacts?",
+  "How do materials and device architecture collectively govern MEMS performance?",
+  "How much of device performance is determined before fabrication even begins?",
+  "How do oxygen-vacancy migration and imprint fields evolve under cyclic electrical loading?",
 ];
 const NOTES = [
   { title: "Understanding P–E Loops", tag: "Ferroelectrics", desc: "A deep dive into polarization–electric field hysteresis and what loop shape reveals about domain dynamics, leakage, and fatigue mechanisms.", date: "Coming soon" },
@@ -531,7 +531,7 @@ function HomePage({ setPage }) {
         <div style={{ padding: "80px 2.5rem 0" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
             <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
-            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.nav }}>Featured Research</span>
+            <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.nav }}>Research Highlights</span>
           </div>
         </div>
         {PROJECTS.map((p, i) => <ProjectBlock key={p.id} p={p} i={i} />)}
