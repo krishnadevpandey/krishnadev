@@ -40,7 +40,7 @@ const PROJECTS = [
     title: "Interface Engineering and Electromechanical Characterization of Piezo-MEMS Devices",
     lab: "Centre for Nano Science and Engineering · IISc Bangalore · 2026",
     desc: "Investigated how bottom-electrode architecture influences the electrical, piezoelectric, and electromechanical performance of PZT thin-film MEMS devices. Assessed the quality of PZT films and Pt bottom electrodes through wafer-scale electrical characterization of over 270 capacitors across two 4-inch (100) and (111) wafers, and extracted the in-plane piezoelectric coefficients (e₃₁,f and d₃₁) of PZT and AlN microcantilevers using LDV measurements and MATLAB-based electromechanical modeling.",
-    tags: ["Piezo-MEMS Devices", "Interface Engineering","e₃₁,f · d₃₁ Extraction", "Wafer Yield"],
+    tags: ["Piezoelectric Micromachined Ultrasonic Transducer", "Interface Engineering","Device Physics", "Wafer Yield"],
     color: "#00d4ff",
     gradient: "linear-gradient(135deg, #001a22 0%, #00141c 100%)",
     image: "/images/PMUT_reso.gif",
@@ -798,7 +798,7 @@ function Footer({ setPage }) {
               letterSpacing: "0.1em",
             }}
           >
-            Materials · MEMS · Functional Devices · 2026
+            Research · Engineering · Innovation
           </div>
         </div>
 
