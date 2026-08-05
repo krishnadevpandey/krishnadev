@@ -526,14 +526,37 @@ function HomePage({ setPage }) {
 function ResearchPage() {
   return (
     <div style={{ paddingTop: 100 }}>
-      <div style={{ padding: "60px 2.5rem 0" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-          <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Research</span>
-        </div>
-        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Selected Work</h1>
+      <div style={{ padding: "50px 2.5rem 20px" }}>
+        <h2
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 22,
+            fontWeight: 600,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            color: "#fff",
+            margin: "0 0 8px",
+          }}
+        >
+          Projects
+        </h2>
+
+        <p
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 15,
+            color: "rgba(255,255,255,0.65)",
+            margin: 0,
+          }}
+        >
+          A snapshot of laboratory work.
+        </p>
       </div>
-      {PROJECTS.map((p, i) => <ProjectBlock key={p.id} p={p} i={i} />)}
+
+      {PROJECTS.map((p, i) => (
+        <ProjectBlock key={p.id} p={p} i={i} />
+      ))}
+
       <QuestionsSection />
     </div>
   );
