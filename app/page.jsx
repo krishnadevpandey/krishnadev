@@ -557,10 +557,38 @@ function ResearchPage() {
 // ─── NOTES PAGE ──────────────────────────────────────────────────────────────
 
 function NotesPage() {
+  const courseGroups = [
+    {
+      title: "Graduate Coursework*",
+      courses:
+        "Structure and Characterization of Materials, Microscopy and Microanalysis of Materials, Transport Phenomena, Nanostructures and Nanomaterials",
+    },
+    {
+      title: "Characterization & Microscopy",
+      courses:
+        "Materials Characterization, Optical, Electronics and Magnetic Materials",
+    },
+    {
+      title: "Functional Materials",
+      courses:
+        "Ceramic Science and Technology, Fundamentals of Nanotechnology and Nanoscience",
+    },
+    {
+      title: "Materials Mechanics & Processing",
+      courses:
+        "Mechanical Behavior of Materials, Phase Transformation and Heat Treatment",
+    },
+  ];
+
   return (
     <div style={{ paddingTop: 110, minHeight: "100vh" }}>
-      <div style={{ maxWidth: 1000, margin: "0 auto", padding: "40px 2.5rem 80px" }}>
-
+      <div
+        style={{
+          maxWidth: 1000,
+          margin: "0 auto",
+          padding: "40px 2.5rem 80px",
+        }}
+      >
         <h1
           style={{
             fontFamily: "'Space Grotesk', sans-serif",
@@ -569,92 +597,67 @@ function NotesPage() {
             letterSpacing: "0.08em",
             textTransform: "uppercase",
             color: "#fff",
-            marginBottom: 10,
+            marginBottom: 45,
           }}
         >
           Courses
         </h1>
 
+        {courseGroups.map((group) => (
+          <CourseRow
+            key={group.title}
+            title={group.title}
+            courses={group.courses}
+          />
+        ))}
+
         <p
           style={{
+            marginTop: 35,
             color: COLORS.body,
-            fontSize: 15,
-            lineHeight: 1.8,
-            marginBottom: 60,
+            fontSize: 14,
+            fontStyle: "italic",
           }}
         >
-          Graduate coursework and selected foundations supporting my research
-          in materials science, microsystems, and semiconductor devices.
+          * Ongoing at IIT Kanpur.
         </p>
-
-        <CourseSection
-          title="Graduate Coursework"
-          courses={[
-            "Structure and Characterization of Materials",
-            "Microscopy and Microanalysis of Materials",
-            "Transport Phenomena",
-            "Nanostructures and Nanomaterials",
-          ]}
-        />
-
-        <CourseSection
-          title="Materials Characterization & Microscopy"
-          courses={[
-            "Materials Characterization",
-            "Optical, Electronics and Magnetic Materials",
-            "Destructive and Non-Destructive Testing",
-          ]}
-        />
-
-        <CourseSection
-          title="Materials Physics & Functional Materials"
-          courses={[
-            "Mechanical Behavior of Materials",
-            "Ceramic Science and Technology",
-            "Fundamentals of Nanotechnology and Nanoscience",
-            "Phase Transformation and Heat Treatment",
-          ]}
-        />
-
-        <CourseSection
-          title="Processing & Reliability"
-          courses={[
-            "Transport Phenomena",
-            "Corrosion Science and Engineering",
-            "Composite Materials",
-          ]}
-        />
       </div>
     </div>
   );
 }
-function CourseSection({ title, courses }) {
+function CourseRow({ title, courses }) {
   return (
-    <div style={{ marginBottom: 55 }}>
-      <h2
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "280px 1fr",
+        gap: "40px",
+        padding: "22px 0",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
+      }}
+    >
+      <div
         style={{
           fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: 34,
+          fontSize: 22,
           fontWeight: 500,
           color: "#fff",
-          marginBottom: 18,
+          lineHeight: 1.4,
         }}
       >
         {title}
-      </h2>
+      </div>
 
-      <ul
+      <div
         style={{
-          color: COLORS.body,
+          fontFamily: "'Space Grotesk', sans-serif",
           fontSize: 17,
-          lineHeight: 2,
-          paddingLeft: 28,
+          color: COLORS.body,
+          lineHeight: 1.9,
         }}
       >
-        {courses.map((course) => (
-          <li key={course}>{course}</li>
-        ))}
-      </ul>
+        {courses}
+      </div>
     </div>
   );
 }
