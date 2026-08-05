@@ -187,15 +187,15 @@ function Nav({ page, setPage }) {
         background: "none", border: "none", cursor: "pointer",
         display: "flex", flexDirection: "column", gap: 2,
       }}>
-        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 600, letterSpacing: "0.12em", color: "#fff", textTransform: "uppercase" }}>Krishnadev</span>
-        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, fontWeight: 400, letterSpacing: "0.2em", color: COLORS.body, textTransform: "uppercase" }}>Materials · Microsystems · Semiconductors</span>
+        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 650, letterSpacing: "0.12em", color: "#fff", textTransform: "uppercase" }}>Krishnadev</span>
+        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, fontWeight: 450, letterSpacing: "0.2em", color: COLORS.body, textTransform: "uppercase" }}>Materials · Microsystems · Semiconductors</span>
       </button>
       <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
         {NAV_LINKS.map(l => (
           <button key={l} onClick={() => { setPage(l.toLowerCase()); window.scrollTo(0,0); }} style={{
             background: "none", border: "none", cursor: "pointer",
             fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: 12, fontWeight: 500, letterSpacing: "0.12em",
+            fontSize: 12, fontWeight: 550, letterSpacing: "0.12em",
             textTransform: "uppercase",
             color: page === l.toLowerCase() ? "#00d4ff" : COLORS.nav,
             transition: "color 0.3s",
@@ -262,7 +262,7 @@ function Hero({ setPage }) {
 
         <p style={{
           fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: 16, fontWeight: 400, lineHeight: 1.8,
+          fontSize: 16, fontWeight: 500, lineHeight: 1.8,
           color: COLORS.body,
           maxWidth: 700, marginBottom: 48,
         }}>
@@ -453,7 +453,7 @@ function ProjectBlock({ p, i }) {
           <div style={{ width: 24, height: 1, background: p.color }} />
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: p.color }}>{p.lab}</span>
         </div>
-        <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 300, color: "#fff", margin: "0 0 1.2rem", lineHeight: 1.2, fontStyle: "italic" }}>{p.title}</h3>
+        <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.6rem,3vw,2.4rem)", fontWeight: 400, color: "#fff", margin: "0 0 1.2rem", lineHeight: 1.2, fontStyle: "italic" }}>{p.title}</h3>
         <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 15, lineHeight: 1.8, color: COLORS.body, marginBottom: 24 }}>{p.desc}</p>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
           {p.tags.map(t => (
@@ -485,7 +485,7 @@ function QuestionsSection() {
           }}>
             <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, color: "#00d4ff", minWidth: 24, paddingTop: 4 }}>0{i + 1}</span>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif",fontSize: 15,
-    fontWeight: 400,
+    fontWeight: 450,
     color: COLORS.body,
     margin: 0,
     lineHeight: 1.8,
@@ -549,7 +549,7 @@ function NotesPage() {
           <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Technical Notes</span>
         </div>
-        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Field Notes</h1>
+        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 400, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Field Notes</h1>
         <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: COLORS.body, maxWidth: 560, lineHeight: 1.8, marginBottom: 64 }}>
           Writing as a tool for thinking. Short technical articles on ferroelectrics, measurement methods, and materials physics — aimed at researchers and curious engineers.
         </p>
@@ -569,7 +569,7 @@ function NotesPage() {
                   padding: "3px 10px", borderRadius: 2,
                 }}>{note.tag}</span>
               </div>
-              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.5rem", fontWeight: 300, color: "#fff", margin: "0 0 10px", fontStyle: "italic" }}>{note.title}</h3>
+              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.5rem", fontWeight: 400, color: "#fff", margin: "0 0 10px", fontStyle: "italic" }}>{note.title}</h3>
               <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: COLORS.body, margin: 0, lineHeight: 1.7, maxWidth: 560 }}>{note.desc}</p>
             </div>
             <div style={{ textAlign: "right", paddingTop: 4 }}>
@@ -598,7 +598,7 @@ function CVPage() {
               <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
               <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Curriculum Vitae</span>
             </div>
-            <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4rem)", fontWeight: 300, color: "#fff", margin: "0 0 0.5rem", fontStyle: "italic" }}>Krishnadev Pandey</h1>
+            <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4rem)", fontWeight: 400, color: "#fff", margin: "0 0 0.5rem", fontStyle: "italic" }}>Krishnadev Pandey</h1>
             <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: COLORS.body, margin: 0 }}>Materials Science & Engineering · IIT Kanpur | MANIT Bhopal | IISc Bangalore</p>
           </div>
         </div>
@@ -609,7 +609,7 @@ function CVPage() {
             <>
               {CV_DATA.education.map((e, i) => (
                 <div key={i} style={{ paddingBottom: 20 }}>
-                  <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.25rem", fontWeight: 300, color: "#fff", fontStyle: "italic", marginBottom: 4 }}>{e.inst}</div>
+                  <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.25rem", fontWeight: 400, color: "#fff", fontStyle: "italic", marginBottom: 4 }}>{e.inst}</div>
                   <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.6)", marginBottom: 4 }}>{e.degree}</div>
                   <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.3)", letterSpacing: "0.1em" }}>{e.year} · {e.detail}</div>
                 </div>
@@ -678,7 +678,7 @@ function ContactPage() {
           <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
           <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Contact</span>
         </div>
-        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 300, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Get in Touch</h1>
+        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 400, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Get in Touch</h1>
         <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: COLORS.body, maxWidth: 480, lineHeight: 1.8, marginBottom: 64 }}>
           Open to research collaborations, internship discussions, and conversations on piezoelectric devices, MEMS, and functional materials.
         </p>
@@ -702,7 +702,7 @@ function ContactPage() {
         </div>
 
         <div style={{ marginTop: 64, padding: 32, border: "1px solid rgba(255,255,255,0.06)", borderRadius: 4 }}>
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.3rem", fontWeight: 300, color: "rgba(255,255,255,0.6)", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
+          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.3rem", fontWeight: 400, color: "rgba(255,255,255,0.6)", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
             "The best collaborations happen when curiosity overlaps — not just expertise."
           </p>
         </div>
