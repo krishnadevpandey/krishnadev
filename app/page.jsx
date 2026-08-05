@@ -266,7 +266,7 @@ function Hero({ setPage }) {
           color: COLORS.body,
           maxWidth: 700, marginBottom: 48,
         }}>
-          Graduate researcher exploring how materials become functional devices through interface engineering, thin-film synthesis, multiscale characterization, and computational modeling, with applications in MEMS and semiconductor technologies.
+          Master's student in Materials Science and Engineering at IIT Kanpur, bridging materials science and device engineering through experiments, characterization, and modeling.
         </p>
 
         <div style={{ display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 48 }}>
@@ -408,36 +408,6 @@ function Affiliations() {
     </section>
   );
 }
-function PhilosophySection() {
-  const [ref, visible] = useInView(0.2);
-  const chain = ["Materials", "→", "Interfaces", "→", "Thin Films", "→", "Devices"];
-  return (
-    <section ref={ref || undefined} style={{ padding: "50px 2.5rem", borderTop: "1px solid rgba(255,255,255,0.06)", position: "relative" }}>
-      <div style={{ maxWidth: 1600, margin: "0 auto" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 60 }}>
-          <div style={{ width: 40, height: 1, background: "rgba(255,255,255,0.2)" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.nav }}>Research Philosophy</span>
-        </div>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "12px 4px", alignItems: "baseline" }}>
-          {chain.map((w, i) => (
-            <span key={i} style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: w === "→" ? "clamp(2rem,4vw,4rem)" : "clamp(2.5rem,5vw,5rem)",
-              fontWeight: 300,
-              color: w === "→" ? "rgba(255,255,255,0.4)" : (i === 0 || i === chain.length - 1) ? "#00d4ff" : "#fff",
-              fontStyle: w === "→" ? "normal" : "italic",
-              opacity: visible ? 1 : 0,
-              transform: visible ? "none" : "translateY(20px)",
-              transition: `all 0.8s cubic-bezier(0.16,1,0.3,1) ${i * 0.08}s`,
-              display: "inline-block",
-            }}>{w}</span>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function ProjectBlock({ p, i }) {
   const [ref, visible] = useInView(0.1);
   const [hovered, setHovered] = useState(false);
