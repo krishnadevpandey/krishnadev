@@ -484,7 +484,17 @@ function QuestionsSection() {
             transition: `all 0.7s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s`,
           }}>
             <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, color: "#00d4ff", minWidth: 24, paddingTop: 4 }}>0{i + 1}</span>
-            <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.1rem,2vw,1.5rem)", fontWeight: 300, color: COLORS.body, margin: 0, lineHeight: 1.5, fontStyle: "italic" }}>{q}</p>
+            <p style={{ fontFamily: "'Space Grotesk', sans-serif",fontSize: 15,
+    fontWeight: 400,
+    color: COLORS.body,
+    margin: 0,
+    lineHeight: 1.8,
+    fontStyle: "normal",
+    letterSpacing: "0.01em",
+  }}
+>
+  {q}
+</p>
           </div>
         ))}
       </div>
