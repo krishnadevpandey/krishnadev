@@ -497,7 +497,6 @@ function HomePage({ setPage }) {
     <>
       <Hero setPage={setPage} />
       <Affiliations />
-      <PhilosophySection />
       <section style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
         <div style={{ padding: "80px 2.5rem 0" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
