@@ -8,7 +8,7 @@ const COLORS = {
   nav: "#f8fafc"
 };
 
-const NAV_LINKS = ["Research", "Notes", "CV", "Contact"];
+const NAV_LINKS = ["Research", "Courses", "CV", "Contact"];
 
 const TAGS = ["Piezoelectric and Ferroelectric Thin Films", "Micro-Electro-Mechanical Systems", "Semiconductor Devices", "Interface Engineering", "Multiscale Modeling"];
 const AFFILIATIONS = [
@@ -545,7 +545,7 @@ function ResearchPage() {
           style={{
             fontFamily: "'Space Grotesk', sans-serif",
             fontSize: 15,
-            color: "rgba(255,255,255,0.65)",
+            color: "rgba(255,255,255,0.82)",
             margin: 0,
           }}
         >
@@ -564,46 +564,104 @@ function ResearchPage() {
 // ─── NOTES PAGE ──────────────────────────────────────────────────────────────
 
 function NotesPage() {
-  const tagColors = { "Ferroelectrics": "#00d4ff", "Metrology": "#7c6fff", "Materials": "#00ff99", "Interfaces": "#ff6b35", "Device Physics": "#ffd700" };
   return (
-    <div style={{ paddingTop: 120, minHeight: "80vh" }}>
-      <div style={{ padding: "40px 2.5rem 80px", maxWidth: 900, margin: "0 auto" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-          <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Technical Notes</span>
-        </div>
-        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 400, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Field Notes</h1>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: COLORS.body, maxWidth: 560, lineHeight: 1.8, marginBottom: 64 }}>
-          Writing as a tool for thinking. Short technical articles on ferroelectrics, measurement methods, and materials physics — aimed at researchers and curious engineers.
+    <div style={{ paddingTop: 110, minHeight: "100vh" }}>
+      <div style={{ maxWidth: 1000, margin: "0 auto", padding: "40px 2.5rem 80px" }}>
+
+        <h1
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 22,
+            fontWeight: 600,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            color: "#fff",
+            marginBottom: 10,
+          }}
+        >
+          Courses
+        </h1>
+
+        <p
+          style={{
+            color: COLORS.body,
+            fontSize: 15,
+            lineHeight: 1.8,
+            marginBottom: 60,
+          }}
+        >
+          Graduate coursework and selected foundations supporting my research
+          in materials science, microsystems, and semiconductor devices.
         </p>
-        {NOTES.map((note, i) => (
-          <div key={i} style={{
-            padding: "36px 0",
-            borderTop: "1px solid rgba(255,255,255,0.06)",
-            display: "grid", gridTemplateColumns: "1fr auto",
-            gap: 24, alignItems: "start",
-          }}>
-            <div>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
-                <span style={{
-                  fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase",
-                  color: tagColors[note.tag] || "#00d4ff",
-                  border: `1px solid ${tagColors[note.tag]}33`,
-                  padding: "3px 10px", borderRadius: 2,
-                }}>{note.tag}</span>
-              </div>
-              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.5rem", fontWeight: 400, color: "#fff", margin: "0 0 10px", fontStyle: "italic" }}>{note.title}</h3>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: COLORS.body, margin: 0, lineHeight: 1.7, maxWidth: 560 }}>{note.desc}</p>
-            </div>
-            <div style={{ textAlign: "right", paddingTop: 4 }}>
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, color: COLORS.muted, letterSpacing: "0.1em" }}>{note.date}</span>
-            </div>
-          </div>
-        ))}
-        <div style={{ marginTop: 48, padding: 32, border: "1px dashed rgba(255,255,255,0.1)", borderRadius: 4, textAlign: "center" }}>
-          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 12, color: "rgba(255,255,255,0.25)", margin: 0, letterSpacing: "0.1em" }}>Articles will be published as the research matures — check back.</p>
-        </div>
+
+        <CourseSection
+          title="Graduate Coursework"
+          courses={[
+            "Structure and Characterization of Materials",
+            "Microscopy and Microanalysis of Materials",
+            "Transport Phenomena",
+            "Nanostructures and Nanomaterials",
+          ]}
+        />
+
+        <CourseSection
+          title="Materials Characterization & Microscopy"
+          courses={[
+            "Materials Characterization",
+            "Optical, Electronics and Magnetic Materials",
+            "Destructive and Non-Destructive Testing",
+          ]}
+        />
+
+        <CourseSection
+          title="Materials Physics & Functional Materials"
+          courses={[
+            "Mechanical Behavior of Materials",
+            "Ceramic Science and Technology",
+            "Fundamentals of Nanotechnology and Nanoscience",
+            "Phase Transformation and Heat Treatment",
+          ]}
+        />
+
+        <CourseSection
+          title="Processing & Reliability"
+          courses={[
+            "Transport Phenomena",
+            "Corrosion Science and Engineering",
+            "Composite Materials",
+          ]}
+        />
       </div>
+    </div>
+  );
+}
+function CourseSection({ title, courses }) {
+  return (
+    <div style={{ marginBottom: 55 }}>
+      <h2
+        style={{
+          fontFamily: "'Space Grotesk', sans-serif",
+          fontSize: 34,
+          fontWeight: 500,
+          color: "#fff",
+          marginBottom: 18,
+        }}
+      >
+        {title}
+      </h2>
+
+      <ul
+        style={{
+          color: COLORS.body,
+          fontSize: 17,
+          lineHeight: 2,
+          paddingLeft: 28,
+        }}
+      >
+        {courses.map((course) => (
+          <li key={course}>{course}</li>
+        ))}
+      </ul>
     </div>
   );
 }
