@@ -92,13 +92,6 @@ const QUESTIONS = [
   "How much of device performance is determined before fabrication even begins?",
   "How do oxygen-vacancy migration and imprint fields evolve under cyclic electrical loading?",
 ];
-const NOTES = [
-  { title: "Understanding P–E Loops", tag: "Ferroelectrics", desc: "A deep dive into polarization–electric field hysteresis and what loop shape reveals about domain dynamics, leakage, and fatigue mechanisms.", date: "Coming soon" },
-  { title: "Why Substrate Bending Affects d₃₃", tag: "Metrology", desc: "Mechanical analysis of how substrate compliance convolves with the true thin-film piezoelectric response in LDV measurements.", date: "Coming soon" },
-  { title: "AlN vs PZT — A System Comparison", tag: "Materials", desc: "Contrasting CMOS-compatibility, growth requirements, d₃₃ magnitudes, and integration trade-offs for MEMS transducer applications.", date: "Coming soon" },
-  { title: "Interface Engineering in Ferroelectrics", tag: "Interfaces", desc: "How buffer layer choice, crystallographic orientation, and electrode chemistry shape the functional response of PZT thin films.", date: "Coming soon" },
-  { title: "d₃₁ vs e₃₁ — Coefficient Conventions", tag: "Device Physics", desc: "Clarifying the piezoelectric tensor conventions, their physical meaning, and measurement approaches relevant to PMUT design.", date: "Coming soon" },
-];
 
 const CV_DATA = {
   education: [
@@ -887,7 +880,7 @@ export default function App() {
   const pages = {
     home: <HomePage setPage={setPage} />,
     research: <ResearchPage />,
-    notes: <NotesPage />,
+    courses: <NotesPage />,
     cv: <CVPage />,
     contact: <ContactPage />,
   };
