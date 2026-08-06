@@ -1150,18 +1150,20 @@ function ContactPage() {
 
 // ─── FOOTER ──────────────────────────────────────────────────────────────────
 
-function Footer({ setPage }) {
+function Footer() {
   return (
     <footer
       style={{
         borderTop: "1px solid rgba(255,255,255,0.06)",
         padding: "48px 2.5rem",
+        marginTop: 80,
       }}
     >
       {/* Flag Counter */}
       <div
         style={{
-          textAlign: "center",
+          display: "flex",
+          justifyContent: "center",
           marginBottom: 40,
         }}
       >
@@ -1172,9 +1174,14 @@ function Footer({ setPage }) {
         >
           <img
             src="https://s01.flagcounter.com/count2/KkmZ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
-            alt="Flag Counter"
-            style={{ borderRadius: 4 }}
-            onError={(e) => { e.currentTarget.style.display = "none"; }}
+            alt="Visitor Counter"
+            style={{
+              borderRadius: 4,
+              opacity: 0.9,
+            }}
+            onError={(e) => {
+              e.currentTarget.style.display = "none";
+            }}
           />
         </a>
       </div>
@@ -1182,73 +1189,7 @@ function Footer({ setPage }) {
       {/* Footer Content */}
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: 20,
-        }}
-      >
-        <div>
-          <div
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 12,
-              fontWeight: 600,
-              letterSpacing: "0.12em",
-              color: COLORS.body,
-              textTransform: "uppercase",
-              marginBottom: 4,
-            }}
-          >
-            Krishnadev Pandey
-          </div>
-        </div>
-
-        <div style={{ display: "flex", gap: "1.5rem" }}>
-          {NAV_LINKS.map((l) => (
-            <button
-              key={l}
-              onClick={() => {
-                setPage(l.toLowerCase());
-                window.scrollTo(0, 0);
-              }}
-              style={{
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 11,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: COLORS.nav,
-                transition: "color 0.3s",
-                padding: 0,
-              }}
-            >
-              {l}
-            </button>
-          ))}
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-// ─── APP ROOT ────────────────────────────────────────────────────────────────
-
-function Footer() {
-  return (
-    <footer
-      style={{
-        borderTop: "1px solid rgba(255,255,255,0.06)",
-        padding: "40px 2.5rem",
-        marginTop: 80,
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1200,
+          maxWidth: 1100,
           margin: "0 auto",
           display: "flex",
           justifyContent: "space-between",
@@ -1276,8 +1217,9 @@ function Footer() {
 
           <div
             style={{
-              color: COLORS.body,
+              fontFamily: "'Space Grotesk', sans-serif",
               fontSize: 14,
+              color: COLORS.body,
             }}
           >
             Feel free to contact me via email or LinkedIn.
@@ -1289,21 +1231,22 @@ function Footer() {
         <div
           style={{
             display: "flex",
-            gap: 18,
             alignItems: "center",
+            gap: 18,
           }}
         >
           {/* Email */}
 
           <a
             href="mailto:krishnadevpandey417@gmail.com"
-            style={{ color: "#fff" }}
-            aria-label="Email"
+            title="Email"
+            style={{
+              color: "#fff",
+              textDecoration: "none",
+              fontSize: 24,
+            }}
           >
-            <i
-              className="fas fa-envelope"
-              style={{ fontSize: 22 }}
-            />
+            ✉️
           </a>
 
           {/* LinkedIn */}
@@ -1312,16 +1255,59 @@ function Footer() {
             href="https://www.linkedin.com/in/krishnadev-pandey"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: "#0A66C2" }}
-            aria-label="LinkedIn"
+            title="LinkedIn"
+            style={{
+              color: "#0A66C2",
+              textDecoration: "none",
+              fontSize: 24,
+              fontWeight: 700,
+            }}
           >
-            <i
-              className="fab fa-linkedin"
-              style={{ fontSize: 24 }}
-            />
+            in
           </a>
         </div>
       </div>
     </footer>
+  );
+}
+
+// ─── APP ROOT ────────────────────────────────────────────────────────────────
+
+export default function App() {
+  const [page, setPage] = useState("home");
+
+  const pages = {
+    home: <HomePage setPage={setPage} />,
+    research: <ResearchPage />,
+    courses: <NotesPage />,
+    cv: <CVPage />,
+    about: <ContactPage />,
+  };
+
+  return (
+    <div style={{ background: "#060608", minHeight: "100vh", color: "#fff", position: "relative" }}>
+      <style>{`
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.3); border-radius: 2px; }
+        @keyframes tagFloat {
+          from { transform: translateY(0px); }
+          to { transform: translateY(-4px); }
+        }
+        button:hover { opacity: 0.85; }
+        a:hover { opacity: 0.8; }
+      `}</style>
+
+      <GridBg />
+      <Nav page={page} setPage={setPage} />
+
+      <main style={{ position: "relative", zIndex: 1 }}>
+        {pages[page] || pages.home}
+      </main>
+
+      {page === "home" && <Footer />}
+    </div>
   );
 }
