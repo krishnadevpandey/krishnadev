@@ -1028,7 +1028,7 @@ function ContactPage() {
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontSize: 18,
-              lineHeight: 1.95,
+              lineHeight: 1.8,
               color: COLORS.body,
             }}
           >
