@@ -1271,7 +1271,7 @@ export default function App() {
         {pages[page] || pages.home}
       </main>
 
-      <Footer setPage={setPage} />
+      {page === "home" && <Footer setPage={setPage} />}
     </div>
   );
 }
