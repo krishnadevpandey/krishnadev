@@ -1159,46 +1159,18 @@ function Footer() {
         marginTop: 80,
       }}
     >
-      {/* Flag Counter */}
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginBottom: 40,
-        }}
-      >
-        <a
-          href="https://info.flagcounter.com/KkmZ"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="https://s01.flagcounter.com/count2/KkmZ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
-            alt="Visitor Counter"
-            style={{
-              borderRadius: 4,
-              opacity: 0.9,
-            }}
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
-            }}
-          />
-        </a>
-      </div>
-
-      {/* Footer Content */}
       <div
         style={{
           maxWidth: 1100,
           margin: "0 auto",
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center",
+          alignItems: "flex-start",
           flexWrap: "wrap",
-          gap: 24,
+          gap: 40,
         }}
       >
-        {/* Left */}
+        {/* LEFT */}
 
         <div>
           <div
@@ -1209,10 +1181,67 @@ function Footer() {
               letterSpacing: "0.12em",
               textTransform: "uppercase",
               color: "#fff",
-              marginBottom: 8,
+              marginBottom: 16,
             }}
           >
             Krishnadev Pandey
+          </div>
+
+          <a
+            href="https://info.flagcounter.com/KkmZ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://s01.flagcounter.com/count2/KkmZ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+              alt="Visitor Counter"
+              style={{ borderRadius: 4 }}
+              onError={(e) => {
+                e.currentTarget.style.display = "none";
+              }}
+            />
+          </a>
+        </div>
+
+        {/* RIGHT */}
+
+        <div style={{ textAlign: "right" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              gap: 20,
+              marginBottom: 16,
+            }}
+          >
+            <a
+              href="mailto:krishnadevpandey417@gmail.com"
+              title="Email"
+              style={{
+                color: "#fff",
+                textDecoration: "none",
+                fontSize: 34,
+              }}
+            >
+              ✉️
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/krishnadev-pandey"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+              style={{
+                color: "#0A66C2",
+                textDecoration: "none",
+                fontSize: 34,
+                fontWeight: 700,
+                fontFamily: "'Space Grotesk', sans-serif",
+              }}
+            >
+              in
+            </a>
           </div>
 
           <div
@@ -1220,57 +1249,16 @@ function Footer() {
               fontFamily: "'Space Grotesk', sans-serif",
               fontSize: 14,
               color: COLORS.body,
+              lineHeight: 1.7,
             }}
           >
             Feel free to contact me via email or LinkedIn.
           </div>
         </div>
-
-        {/* Right */}
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 18,
-          }}
-        >
-          {/* Email */}
-
-          <a
-            href="mailto:krishnadevpandey417@gmail.com"
-            title="Email"
-            style={{
-              color: "#fff",
-              textDecoration: "none",
-              fontSize: 24,
-            }}
-          >
-            ✉️
-          </a>
-
-          {/* LinkedIn */}
-
-          <a
-            href="https://www.linkedin.com/in/krishnadev-pandey"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="LinkedIn"
-            style={{
-              color: "#0A66C2",
-              textDecoration: "none",
-              fontSize: 24,
-              fontWeight: 700,
-            }}
-          >
-            in
-          </a>
-        </div>
       </div>
     </footer>
   );
 }
-
 // ─── APP ROOT ────────────────────────────────────────────────────────────────
 
 export default function App() {
