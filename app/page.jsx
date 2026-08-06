@@ -1172,36 +1172,42 @@ function Footer() {
       >
         {/* LEFT */}
 
-        <div>
-          <div
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 13,
-              fontWeight: 600,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "#fff",
-              marginBottom: 16,
-            }}
-          >
-            Krishnadev Pandey
-          </div>
+<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "flex-start",
+  }}
+>
+  <a
+    href="https://info.flagcounter.com/KkmZ"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ marginBottom: 14 }}
+  >
+    <img
+      src="https://s01.flagcounter.com/count2/KkmZ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+      alt="Visitor Counter"
+      style={{ borderRadius: 4 }}
+      onError={(e) => {
+        e.currentTarget.style.display = "none";
+      }}
+    />
+  </a>
 
-          <a
-            href="https://info.flagcounter.com/KkmZ"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://s01.flagcounter.com/count2/KkmZ/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
-              alt="Visitor Counter"
-              style={{ borderRadius: 4 }}
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-              }}
-            />
-          </a>
-        </div>
+  <div
+    style={{
+      fontFamily: "'Space Grotesk', sans-serif",
+      fontSize: 13,
+      fontWeight: 600,
+      letterSpacing: "0.12em",
+      textTransform: "uppercase",
+      color: "#fff",
+    }}
+  >
+    Krishnadev Pandey
+  </div>
+</div>
 
         {/* RIGHT */}
 
