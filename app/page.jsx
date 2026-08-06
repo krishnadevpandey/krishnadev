@@ -1033,43 +1033,59 @@ function ContactPage() {
             }}
           >
             <p>
-              Hello! I am currently pursuing a <strong style={{color:"#fff"}}>Master of Technology</strong> in
-              Materials Science and Engineering at
-              <strong style={{color:"#fff"}}> IIT Kanpur</strong>.
-              Previously, I completed my Bachelor's in Materials and
-              Metallurgical Engineering from
-              <strong style={{color:"#fff"}}> MANIT Bhopal</strong>, where I
-              graduated <strong style={{color:"#fff"}}>3rd in my department</strong>.
-            </p>
+Hello! I am currently pursuing a <strong>Master of Technology</strong> in
+Materials Science and Engineering at{" "}
+<span style={{ color: "#ff6bd6" }}>
+  Indian Institute of Technology Kanpur
+</span>.
+Previously, I completed my Bachelor's (B.Tech) in Materials and Metallurgical
+Engineering from{" "}
+<span style={{ color: "#ff6bd6" }}>
+  Maulana Azad National Institute of Technology Bhopal
+</span>.
+</p>
+
+           <p>
+My research lies at the intersection of <strong>functional materials,
+piezoelectric MEMS, and semiconductor devices</strong>. I am particularly
+interested in understanding how material processing, microstructure, and
+interfaces influence the electrical and electromechanical performance of
+thin-film devices.
+</p>
 
             <p>
-              My research focuses on
-              <strong style={{color:"#fff"}}> piezoelectric and ferroelectric thin
-              films</strong>, interface engineering, wafer-scale electrical
-              characterization, and MEMS transducers. I enjoy combining
-              experiments, microscopy, modeling, and device physics to
-              understand how materials ultimately determine device
-              performance.
-            </p>
+My research has focused on
+<strong style={{ color: "#00d4ff" }}>
+ piezoelectric thin films, MEMS devices, and semiconductor technologies
+</strong>.
+At{" "}
+<span style={{ color: "#ff6bd6" }}>
+Centre for Nano Science and Engineering, Indian Institute of Science (IISc) Bangalore
+</span>, I worked on wafer-scale electrical characterization of PZT devices to evaluate yield and defect distribution, investigated interface engineering in Piezoelectric Micromachined Ultrasonic Transducers (PMUTs) through different bottom-electrode architectures, and extracted the in-plane piezoelectric coefficients of PZT and AlN microcantilevers using Laser Doppler Vibrometry and MATLAB-based modeling. Earlier, at{" "}
+<span style={{ color: "#ff6bd6" }}>
+Solid State Physics Laboratory (SSPL) of DRDO
+</span>, I worked on CdZnTe single-crystal growth, poling of PMN-PT single crystals, and phase-equilibria analysis using Thermo-Calc.
+</p>
 
             <p>
-              During my undergraduate studies, I worked at
-              <strong style={{color:"#fff"}}> CeNSE, IISc Bangalore</strong> on
-              thin-film piezoelectric MEMS devices and earlier at
-              <strong style={{color:"#fff"}}> DRDO–SSPL</strong> on single-crystal
-              growth and electrical poling of functional materials.
-            </p>
+I enjoy combining experiments with computational tools to understand the
+structure-property relationships that govern material behavior. My work
+often involves thin-film characterization, microscopy, electrical
+measurements and finite-element modeling to
+bridge materials science with device engineering.
+</p>
 
-            <p>
-              Outside research, I enjoy reading about semiconductor
-              technology, designing scientific figures, and building tools
-              that make research easier to communicate.
-            </p>
+           <p>
+Outside materials, you can find me playing <strong>chess</strong> and
+<strong>cricket</strong>, with a keen personal interest in
+<strong>international diplomacy</strong>.
+</p>
 
-            <p>
-              Feel free to reach out if you'd like to discuss research,
-              collaborations, graduate studies, or semiconductor materials.
-            </p>
+<p>
+I am always happy to connect with researchers, industry
+professionals and students interested in materials science, semiconductor devices,
+functional thin films, and MEMS technologies.
+</p>
           </div>
 
           {/* RIGHT */}
@@ -1111,7 +1127,7 @@ function ContactPage() {
                 display: "flex",
                 flexDirection: "column",
                 gap: 14,
-                fontSize: 15,
+                fontSize: 18,
               }}
             >
               <a
@@ -1129,17 +1145,6 @@ function ContactPage() {
               >
                 LinkedIn
               </a>
-
-              <a
-                href="https://github.com/"
-                style={{ color: "#00ff99", textDecoration: "none" }}
-              >
-                GitHub
-              </a>
-
-              <span style={{ color: COLORS.body }}>
-                Google Scholar (Coming soon)
-              </span>
             </div>
           </div>
         </div>
