@@ -8,7 +8,7 @@ const COLORS = {
   nav: "#f8fafc"
 };
 
-const NAV_LINKS = ["Research", "Courses", "CV", "About"];
+const NAV_LINKS = ["About", "Research", "CV", "Courses"];
 
 const TAGS = ["Piezoelectric and Ferroelectric Thin Films", "Micro-Electro-Mechanical Systems", "Semiconductor Devices", "Interface Engineering", "Multiscale Modeling"];
 const AFFILIATIONS = [
