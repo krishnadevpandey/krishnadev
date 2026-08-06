@@ -8,7 +8,7 @@ const COLORS = {
   nav: "#f8fafc"
 };
 
-const NAV_LINKS = ["Research", "Courses", "CV", "Contact"];
+const NAV_LINKS = ["Research", "Courses", "CV", "About"];
 
 const TAGS = ["Piezoelectric and Ferroelectric Thin Films", "Micro-Electro-Mechanical Systems", "Semiconductor Devices", "Interface Engineering", "Multiscale Modeling"];
 const AFFILIATIONS = [
@@ -266,15 +266,20 @@ function Hero({ setPage }) {
   useEffect(() => { setTimeout(() => setMounted(true), 100); }, []);
 
   return (
-    <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "140px 2.5rem 80px", position: "relative" }}>
+    <section
+  style={{
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    padding: "90px 2.5rem 80px",
+    position: "relative",
+  }}
+>
       {/* Decorative vertical line */}
-      <div style={{ position: "absolute", left: "2.5rem", top: 140, bottom: 80, width: 1, background: "linear-gradient(to bottom, transparent, rgba(0,212,255,0.3), transparent)" }} />
+      <div style={{ position: "absolute", left: "2.5rem", top: 80, bottom: 80, width: 1, background: "linear-gradient(to bottom, transparent, rgba(0,212,255,0.3), transparent)" }} />
 
       <div style={{ maxWidth: 900, opacity: mounted ? 1 : 0, transform: mounted ? "none" : "translateY(30px)", transition: "all 1.2s cubic-bezier(0.16,1,0.3,1)" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
-          <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>M.Tech Student · IIT Kanpur | Former Research Intern · IISc Bangalore</span>
-        </div>
 
         <h1 style={{
           fontFamily: "'Cormorant Garamond', serif",
@@ -1240,7 +1245,7 @@ export default function App() {
     research: <ResearchPage />,
     courses: <NotesPage />,
     cv: <CVPage />,
-    contact: <ContactPage />,
+    About: <ContactPage />,
   };
 
   return (
