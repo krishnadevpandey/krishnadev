@@ -1035,7 +1035,7 @@ function ContactPage() {
             <p style={{ marginBottom: 24 }}>
 Hello! I am a first-year Master's (M.Tech) student in{" "}
 <a
-  href="https://mse.iitk.ac.in/"
+  href="https://www.iitk.ac.in/mse/"
   target="_blank"
   rel="noopener noreferrer"
   style={{ color: "#00d4ff", textDecoration: "none" }}
@@ -1072,17 +1072,41 @@ thin-film devices.
 </p>
 
             <p style={{ marginBottom: 24 }}>
-My research has focused on
-<strong style={{ color: "#00d4ff" }}>
- piezoelectric thin films, MEMS devices, and semiconductor technologies
-</strong>.
-At{" "}
-<span style={{ color: "#ff6bd6" }}>
-Centre for Nano Science and Engineering, Indian Institute of Science (IISc) Bangalore
-</span>, I worked on wafer-scale electrical characterization of PZT devices to evaluate yield and defect distribution, investigated interface engineering in Piezoelectric Micromachined Ultrasonic Transducers (PMUTs) through different bottom-electrode architectures, and extracted the in-plane piezoelectric coefficients of PZT and AlN microcantilevers using Laser Doppler Vibrometry and MATLAB-based modeling. Earlier, at{" "}
-<span style={{ color: "#ff6bd6" }}>
-Solid State Physics Laboratory (SSPL) of DRDO
-</span>, I worked on CdZnTe single-crystal growth, poling of PMN-PT single crystals, and phase-equilibria analysis using Thermo-Calc.
+  I conducted the majority of my bachelor's research at{" "}
+  <a
+    href="https://cense.iisc.ac.in/"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ color: "#ff6bd6", textDecoration: "none" }}
+  >
+    Centre for Nano Science and Engineering (CeNSE)
+  </a>
+  ,{" "}
+  <a
+    href="https://iisc.ac.in/"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ color: "#ff6bd6", textDecoration: "none" }}
+  >
+    Indian Institute of Science, Bangalore
+  </a>
+  , including my bachelor's thesis. There, I worked on wafer-scale electrical
+  characterization of PZT devices to evaluate yield and defect distribution,
+  investigated interface engineering in Piezoelectric Micromachined Ultrasonic
+  Transducers (PMUTs) through different bottom-electrode architectures, and
+  extracted the in-plane piezoelectric coefficients of PZT and AlN
+  microcantilevers using Laser Doppler Vibrometry and MATLAB-based modeling.
+  Earlier, at{" "}
+  <a
+    href="https://drdo.gov.in/drdo/en"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{ color: "#ff6bd6", textDecoration: "none" }}
+  >
+    Solid State Physics Laboratory, DRDO
+  </a>
+  , I worked on CdZnTe single-crystal growth, poling of PMN-PT
+  single crystals, and binary and ternary phase-equilibria analysis.
 </p>
 
             <p style={{ marginBottom: 24 }}>
