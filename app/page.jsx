@@ -96,7 +96,7 @@ const QUESTIONS = [
 const CV_DATA = {
   education: [
     {
-      year: "2026–Present",
+      year: "2026–2028",
       degree: "Master of Technology",
       inst: "Indian Institute of Technology Kanpur",
       detail: "Materials Science and Engineering",
@@ -220,7 +220,6 @@ function Nav({ page, setPage }) {
         display: "flex", flexDirection: "column", gap: 2,
       }}>
         <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, fontWeight: 650, letterSpacing: "0.12em", color: "#fff", textTransform: "uppercase" }}>Krishnadev</span>
-        <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, fontWeight: 450, letterSpacing: "0.2em", color: COLORS.body, textTransform: "uppercase" }}>Materials · Microsystems · Semiconductors</span>
       </button>
       <div style={{ display: "flex", gap: "2rem", alignItems: "center" }}>
         {NAV_LINKS.map(l => (
@@ -986,49 +985,158 @@ fontSize: 14,
 }
 
 // ─── CONTACT PAGE ────────────────────────────────────────────────────────────
-
 function ContactPage() {
-  const links = [
-    { label: "Email", value: "krishnadevpandey417@gmail.com", href: "mailto:krishnadevpandey417@gmail.com", color: "#00d4ff" },
-    { label: "LinkedIn", value: "linkedin.com/in/krishnadev-pandey", href: "https://www.linkedin.com/in/krishnadev-pandey", color: "#7c6fff" },
-    { label: "Google Scholar", value: "Profile — coming soon", href: null, color: "#00ff99" },
-    { label: "Location", value: "IISc Bangalore / MANIT Bhopal, India", href: null, color: "#ff6b35" },
-  ];
-
   return (
-    <div style={{ paddingTop: 120, minHeight: "80vh" }}>
-      <div style={{ padding: "40px 2.5rem 100px", maxWidth: 700, margin: "0 auto" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-          <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Contact</span>
-        </div>
-        <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4.5rem)", fontWeight: 400, color: "#fff", margin: "0 0 1rem", fontStyle: "italic" }}>Get in Touch</h1>
-        <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: COLORS.body, maxWidth: 480, lineHeight: 1.8, marginBottom: 64 }}>
-          Open to research collaborations, internship discussions, and conversations on piezoelectric devices, MEMS, and functional materials.
-        </p>
+    <div style={{ paddingTop: 110 }}>
+      <div
+        style={{
+          maxWidth: 1050,
+          margin: "0 auto",
+          padding: "40px 2.5rem 100px",
+        }}
+      >
+        <h1
+          style={{
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 22,
+            fontWeight: 600,
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            color: "#fff",
+            marginBottom: 40,
+          }}
+        >
+          About
+        </h1>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-          {links.map((l, i) => (
-            <div key={i} style={{
-              padding: "28px 0",
-              borderTop: "1px solid rgba(255,255,255,0.06)",
-              display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12,
-            }}>
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)", minWidth: 120 }}>{l.label}</span>
-              {l.href ? (
-                <a href={l.href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: l.color, textDecoration: "none", letterSpacing: "0.02em" }}>{l.value}</a>
-              ) : (
-                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, color: "rgba(255,255,255,0.5)" }}>{l.value}</span>
-              )}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.6fr 0.9fr",
+            gap: 70,
+            alignItems: "start",
+          }}
+        >
+          {/* LEFT */}
+
+          <div
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 18,
+              lineHeight: 1.95,
+              color: COLORS.body,
+            }}
+          >
+            <p>
+              Hello! I am currently pursuing a <strong style={{color:"#fff"}}>Master of Technology</strong> in
+              Materials Science and Engineering at
+              <strong style={{color:"#fff"}}> IIT Kanpur</strong>.
+              Previously, I completed my Bachelor's in Materials and
+              Metallurgical Engineering from
+              <strong style={{color:"#fff"}}> MANIT Bhopal</strong>, where I
+              graduated <strong style={{color:"#fff"}}>3rd in my department</strong>.
+            </p>
+
+            <p>
+              My research focuses on
+              <strong style={{color:"#fff"}}> piezoelectric and ferroelectric thin
+              films</strong>, interface engineering, wafer-scale electrical
+              characterization, and MEMS transducers. I enjoy combining
+              experiments, microscopy, modeling, and device physics to
+              understand how materials ultimately determine device
+              performance.
+            </p>
+
+            <p>
+              During my undergraduate studies, I worked at
+              <strong style={{color:"#fff"}}> CeNSE, IISc Bangalore</strong> on
+              thin-film piezoelectric MEMS devices and earlier at
+              <strong style={{color:"#fff"}}> DRDO–SSPL</strong> on single-crystal
+              growth and electrical poling of functional materials.
+            </p>
+
+            <p>
+              Outside research, I enjoy reading about semiconductor
+              technology, designing scientific figures, and building tools
+              that make research easier to communicate.
+            </p>
+
+            <p>
+              Feel free to reach out if you'd like to discuss research,
+              collaborations, graduate studies, or semiconductor materials.
+            </p>
+          </div>
+
+          {/* RIGHT */}
+
+          <div>
+            <img
+              src="/images/profile.jpg"
+              alt="Krishnadev Pandey"
+              style={{
+                width: "100%",
+                borderRadius: 8,
+                border: "1px solid rgba(255,255,255,.08)",
+                marginBottom: 18,
+              }}
+            />
+
+            <div
+              style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: 30,
+                color: "#fff",
+                marginBottom: 6,
+              }}
+            >
+              Krishnadev Pandey
             </div>
-          ))}
-          <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} />
-        </div>
 
-        <div style={{ marginTop: 64, padding: 32, border: "1px solid rgba(255,255,255,0.06)", borderRadius: 4 }}>
-          <p style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.3rem", fontWeight: 400, color: "rgba(255,255,255,0.6)", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
-            "The best collaborations happen when curiosity overlaps — not just expertise."
-          </p>
+            <div
+              style={{
+                color: COLORS.body,
+                marginBottom: 30,
+              }}
+            >
+              Bangalore, India
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 14,
+                fontSize: 15,
+              }}
+            >
+              <a
+                href="mailto:krishnadevpandey417@gmail.com"
+                style={{ color: "#00d4ff", textDecoration: "none" }}
+              >
+                Email
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/krishnadev-pandey"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#7c6fff", textDecoration: "none" }}
+              >
+                LinkedIn
+              </a>
+
+              <a
+                href="https://github.com/"
+                style={{ color: "#00ff99", textDecoration: "none" }}
+              >
+                GitHub
+              </a>
+
+              <span style={{ color: COLORS.body }}>
+                Google Scholar (Coming soon)
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
