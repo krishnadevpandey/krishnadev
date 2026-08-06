@@ -672,7 +672,7 @@ function CourseRow({ title, courses }) {
             {index !== courses.length - 1 && (
               <span
                 style={{
-                  color: "rgba(255,255,255,0.30)",
+                  color: "rgba(255,255,255,0.12)",
                   margin: "0 10px",
                 }}
               >
