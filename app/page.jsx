@@ -1245,7 +1245,7 @@ export default function App() {
     research: <ResearchPage />,
     courses: <NotesPage />,
     cv: <CVPage />,
-    About: <ContactPage />,
+    about: <ContactPage />,
   };
 
   return (
