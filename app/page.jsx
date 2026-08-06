@@ -97,15 +97,16 @@ const CV_DATA = {
   education: [
     {
       year: "2026–Present",
-      degree: "M.Tech in Materials Science and Engineering",
+      degree: "Master of Technology",
       inst: "Indian Institute of Technology Kanpur",
-      detail: "Current Student",
+      detail: "Materials Science and Engineering",
     },
     {
       year: "2022–2026",
-      degree: "B.Tech in Materials and Metallurgical Engineering",
+      degree: "Bachelor of Technology",
       inst: "Maulana Azad National Institute of Technology Bhopal",
-      detail: "CGPA 8.19/10 · Rank 3/61",
+      detail: "Materials and Metallurgical Engineering",
+      cgpa: "CGPA 8.19/10",
     },
   ],
 
@@ -113,19 +114,19 @@ const CV_DATA = {
     {
       year: "2026",
       title: "Undergraduate Thesis Researcher",
-      inst: "Centre for Nano Science and Engineering, IISc Bangalore",
-      desc: "Interface engineering and electromechanical characterization of PZT thin-film MEMS devices.",
+      inst: "Indian Institute of Science, Bangalore",
+      desc: "Interface engineering and electromechanical characterization of PZT and AlN thin-film MEMS devices.",
     },
     {
       year: "2025",
-      title: "Summer Research Intern",
-      inst: "Centre for Nano Science and Engineering, IISc Bangalore",
+      title: "Summer Intern",
+      inst: "Indian Institute of Science, Bangalore",
       desc: "Quantitative electromechanical characterization of piezoelectric thin films using LDV and COMSOL.",
     },
     {
       year: "2024–25",
       title: "Winter Research Intern",
-      inst: "DRDO – Solid State Physics Laboratory",
+      inst: "Defence Research and Development Organisation (DRDO)",
       desc: "CdZnTe crystal growth, PMN–PT crystal poling, and Thermo-Calc phase equilibrium analysis.",
     },
   ],
@@ -134,17 +135,17 @@ const CV_DATA = {
     {
       cat: "Characterization",
       items:
-        "LDV • Precision Multiferroic • Probe Station • XRD • FESEM • Optical Profilometer",
+        "DC Probe Station • Precision Multiferroic •  Laser Doppler Vibrometry • Lockin Amplifier • Optical Profilometer • Scanning Electron Microscopy",
     },
     {
-      cat: "Modeling",
+      cat: "Computation & Simulation",
       items:
-        "COMSOL • Materials Studio (DFT) • Thermo-Calc • VESTA",
+        "COMSOL Multiphysics • Materials Studio (DFT) • Thermo-Calc • VESTA",
     },
     {
-      cat: "Programming",
+      cat: "Programming & Data Analysis",
       items:
-        "Python • MATLAB • Origin • LaTeX",
+        "Python • MATLAB • Origin",
     },
   ],
 };
