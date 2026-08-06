@@ -95,19 +95,57 @@ const QUESTIONS = [
 
 const CV_DATA = {
   education: [
-    { inst: "Maulana Azad National Institute of Technology, Bhopal", degree: "B.Tech — Materials and Metallurgical Engineering", year: "2022–2026", detail: "GPA 8.19/10 · Rank 3 / 61" },
+    {
+      year: "2026–Present",
+      degree: "M.Tech in Materials Science and Engineering",
+      inst: "Indian Institute of Technology Kanpur",
+      detail: "Current Student",
+    },
+    {
+      year: "2022–2026",
+      degree: "B.Tech in Materials and Metallurgical Engineering",
+      inst: "Maulana Azad National Institute of Technology Bhopal",
+      detail: "CGPA 8.19/10 · Rank 3/61",
+    },
   ],
-  honors: [
-    "Rank 3 of 61 — top 5% of graduating class",
-    "Selected for Research Experience Program, CeNSE IISc Bangalore (B.Tech Thesis, 2026)",
-    "CeNSE Summer Internship + Certificate of Distinction, IISc Semiconductor Winter School (2025)",
-    "Samsung Fellowship — India Semiconductor Workforce Development Program (2025)",
-    "IIT Madras certification in Programming and Data Science (2024)",
+
+  experience: [
+    {
+      year: "2026",
+      title: "Undergraduate Thesis Researcher",
+      inst: "Centre for Nano Science and Engineering, IISc Bangalore",
+      desc: "Interface engineering and electromechanical characterization of PZT thin-film MEMS devices.",
+    },
+    {
+      year: "2025",
+      title: "Summer Research Intern",
+      inst: "Centre for Nano Science and Engineering, IISc Bangalore",
+      desc: "Quantitative electromechanical characterization of piezoelectric thin films using LDV and COMSOL.",
+    },
+    {
+      year: "2024–25",
+      title: "Winter Research Intern",
+      inst: "DRDO – Solid State Physics Laboratory",
+      desc: "CdZnTe crystal growth, PMN–PT crystal poling, and Thermo-Calc phase equilibrium analysis.",
+    },
   ],
+
   skills: [
-    { cat: "Characterization", items: "Laser Doppler Vibrometry · Precision Multiferroic · DC Probe Station · XRD · FESEM · Optical Profilometer" },
-    { cat: "Computation", items: "DFT (Materials Studio) · COMSOL Multiphysics · Thermo-Calc · VESTA" },
-    { cat: "Software & Languages", items: "Python · MATLAB · Origin · LaTeX" },
+    {
+      cat: "Characterization",
+      items:
+        "LDV • Precision Multiferroic • Probe Station • XRD • FESEM • Optical Profilometer",
+    },
+    {
+      cat: "Modeling",
+      items:
+        "COMSOL • Materials Studio (DFT) • Thermo-Calc • VESTA",
+    },
+    {
+      cat: "Programming",
+      items:
+        "Python • MATLAB • Origin • LaTeX",
+    },
   ],
 };
 
@@ -688,75 +726,248 @@ function CourseRow({ title, courses }) {
 
 // ─── CV PAGE ─────────────────────────────────────────────────────────────────
 
+function CVCard({ title, children }) {
+  return (
+    <div
+      style={{
+        background: "#0d0f14",
+        border: "1px solid rgba(255,255,255,0.08)",
+        borderRadius: 8,
+        padding: "36px",
+        marginBottom: 32,
+      }}
+    >
+      <h2
+        style={{
+          fontFamily: "'Space Grotesk', sans-serif",
+          fontSize: 32,
+          fontWeight: 500,
+          color: "#fff",
+          marginBottom: 28,
+        }}
+      >
+        {title}
+      </h2>
+
+      {children}
+    </div>
+  );
+}
+
 function CVPage() {
   return (
-    <div style={{ paddingTop: 120, minHeight: "80vh" }}>
-      <div style={{ padding: "40px 2.5rem 100px", maxWidth: 860, margin: "0 auto" }}>
-        {/* Header */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 64, flexWrap: "wrap", gap: 24 }}>
+    <div style={{ paddingTop: 110 }}>
+      <div
+        style={{
+          maxWidth: 950,
+          margin: "0 auto",
+          padding: "40px 2.5rem 100px",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: 45,
+          }}
+        >
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-              <div style={{ width: 40, height: 1, background: "#00d4ff" }} />
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: "#00d4ff" }}>Curriculum Vitae</span>
-            </div>
-            <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(2.5rem,5vw,4rem)", fontWeight: 400, color: "#fff", margin: "0 0 0.5rem", fontStyle: "italic" }}>Krishnadev Pandey</h1>
-            <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: COLORS.body, margin: 0 }}>Materials Science & Engineering · IIT Kanpur | MANIT Bhopal | IISc Bangalore</p>
+            <h1
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 22,
+                fontWeight: 600,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                color: "#fff",
+                marginBottom: 10,
+              }}
+            >
+              CV
+            </h1>
+
+            <p
+              style={{
+                color: COLORS.body,
+                fontSize: 15,
+              }}
+            >
+              Education, research experience and technical skills.
+            </p>
           </div>
         </div>
 
-        {/* Sections */}
-        {[
-          { title: "Education", content: (
-            <>
-              {CV_DATA.education.map((e, i) => (
-                <div key={i} style={{ paddingBottom: 20 }}>
-                  <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.25rem", fontWeight: 400, color: "#fff", fontStyle: "italic", marginBottom: 4 }}>{e.inst}</div>
-                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.6)", marginBottom: 4 }}>{e.degree}</div>
-                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 11, color: "rgba(255,255,255,0.3)", letterSpacing: "0.1em" }}>{e.year} · {e.detail}</div>
+        {/* Education */}
+
+        <CVCard title="Education">
+
+          {CV_DATA.education.map((e) => (
+
+            <div
+              key={e.degree}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "120px 1fr",
+                gap: 28,
+                padding: "20px 0",
+                borderBottom: "1px solid rgba(255,255,255,.08)",
+              }}
+            >
+              <div
+                style={{
+                  color: "#00d4ff",
+                  fontWeight: 600,
+                  fontSize: 13,
+                }}
+              >
+                {e.year}
+              </div>
+
+              <div>
+
+                <div
+                  style={{
+                    color: "#fff",
+                    fontSize: 22,
+                    fontWeight: 500,
+                  }}
+                >
+                  {e.degree}
                 </div>
-              ))}
-            </>
-          )},
-          { title: "Research Experience", content: (
-            <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
-              {PROJECTS.slice(0,3).map((p, i) => (
-                <div key={i} style={{ paddingLeft: 16, borderLeft: `2px solid ${p.color}40` }}>
-                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.2em", color: p.color, textTransform: "uppercase", marginBottom: 6 }}>{p.lab}</div>
-                  <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.1rem", color: "#fff", fontStyle: "italic", marginBottom: 6 }}>{p.title}</div>
-                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.45)", lineHeight: 1.7 }}>{p.desc}</div>
+
+                <div
+                  style={{
+                    color: COLORS.body,
+                    marginTop: 6,
+                  }}
+                >
+                  {e.inst}
                 </div>
-              ))}
-            </div>
-          )},
-          { title: "Honors & Awards", content: (
-            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              {CV_DATA.honors.map((h, i) => (
-                <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                  <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#00d4ff", marginTop: 8, flexShrink: 0 }} />
-                  <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>{h}</span>
+
+                <div
+                  style={{
+                    color: "rgba(255,255,255,.45)",
+                    marginTop: 4,
+                    fontSize: 14,
+                  }}
+                >
+                  {e.detail}
                 </div>
-              ))}
+
+              </div>
+
             </div>
-          )},
-          { title: "Technical Skills", content: (
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              {CV_DATA.skills.map((s, i) => (
-                <div key={i} style={{ display: "grid", gridTemplateColumns: "160px 1fr", gap: 20, alignItems: "start" }}>
-                  <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(255,255,255,0.3)", paddingTop: 2 }}>{s.cat}</span>
-                  <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 13, color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>{s.items}</span>
+
+          ))}
+
+        </CVCard>
+
+        {/* Experience */}
+
+        <CVCard title="Research Experience">
+
+          {CV_DATA.experience.map((e) => (
+
+            <div
+              key={e.title}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "120px 1fr",
+                gap: 28,
+                padding: "20px 0",
+                borderBottom: "1px solid rgba(255,255,255,.08)",
+              }}
+            >
+              <div
+                style={{
+                  color: "#00d4ff",
+                  fontWeight: 600,
+                  fontSize: 13,
+                }}
+              >
+                {e.year}
+              </div>
+
+              <div>
+
+                <div
+                  style={{
+                    color: "#fff",
+                    fontSize: 22,
+                    fontWeight: 500,
+                  }}
+                >
+                  {e.title}
                 </div>
-              ))}
+
+                <div
+                  style={{
+                    color: COLORS.body,
+                    marginTop: 6,
+                  }}
+                >
+                  {e.inst}
+                </div>
+
+                <div
+                  style={{
+                    color: "rgba(255,255,255,.55)",
+                    marginTop: 10,
+                    lineHeight: 1.8,
+                  }}
+                >
+                  {e.desc}
+                </div>
+
+              </div>
+
             </div>
-          )},
-        ].map((sec, i) => (
-          <div key={i} style={{ marginBottom: 56 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 28 }}>
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 10, letterSpacing: "0.25em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)" }}>{sec.title}</span>
-              <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,0.06)" }} />
+
+          ))}
+
+        </CVCard>
+
+        {/* Skills */}
+
+        <CVCard title="Technical Skills">
+
+          {CV_DATA.skills.map((s) => (
+
+            <div
+              key={s.cat}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "180px 1fr",
+                gap: 24,
+                padding: "16px 0",
+                borderBottom: "1px solid rgba(255,255,255,.08)",
+              }}
+            >
+              <div
+                style={{
+                  color: "#fff",
+                  fontWeight: 500,
+                }}
+              >
+                {s.cat}
+              </div>
+
+              <div
+                style={{
+                  color: COLORS.body,
+                  lineHeight: 1.8,
+                }}
+              >
+                {s.items}
+              </div>
+
             </div>
-            {sec.content}
-          </div>
-        ))}
+
+          ))}
+
+        </CVCard>
+
       </div>
     </div>
   );
