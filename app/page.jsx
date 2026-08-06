@@ -1032,28 +1032,46 @@ function ContactPage() {
               color: COLORS.body,
             }}
           >
-            <p>
-Hello! I am currently pursuing a <strong>Master of Technology</strong> in
-Materials Science and Engineering at{" "}
-<span style={{ color: "#ff6bd6" }}>
+            <p style={{ marginBottom: 24 }}>
+Hello! I am a first-year Master's (M.Tech) student in{" "}
+<a
+  href="https://mse.iitk.ac.in/"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ color: "#00d4ff", textDecoration: "none" }}
+>
+  Materials Science and Engineering
+</a>{" "}
+at{" "}
+<a
+  href="https://www.iitk.ac.in/"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ color: "#ff6bd6", textDecoration: "none" }}
+>
   Indian Institute of Technology Kanpur
-</span>.
+</a>.
+
 Previously, I completed my Bachelor's (B.Tech) in Materials and Metallurgical
 Engineering from{" "}
-<span style={{ color: "#ff6bd6" }}>
+<a
+  href="https://www.manit.ac.in/"
+  target="_blank"
+  rel="noopener noreferrer"
+  style={{ color: "#ff6bd6", textDecoration: "none" }}
+>
   Maulana Azad National Institute of Technology Bhopal
-</span>.
+</a>.
 </p>
 
-           <p>
-My research lies at the intersection of <strong>functional materials,
-piezoelectric MEMS, and semiconductor devices</strong>. I am particularly
+           <p style={{ marginBottom: 24 }}>
+My research lies at the intersection of pizoelectric and ferroelectric thin films, Micro-Electro-Mechanical Systems (MEMS), and semiconductor devices. I am particularly
 interested in understanding how material processing, microstructure, and
 interfaces influence the electrical and electromechanical performance of
 thin-film devices.
 </p>
 
-            <p>
+            <p style={{ marginBottom: 24 }}>
 My research has focused on
 <strong style={{ color: "#00d4ff" }}>
  piezoelectric thin films, MEMS devices, and semiconductor technologies
@@ -1067,7 +1085,7 @@ Solid State Physics Laboratory (SSPL) of DRDO
 </span>, I worked on CdZnTe single-crystal growth, poling of PMN-PT single crystals, and phase-equilibria analysis using Thermo-Calc.
 </p>
 
-            <p>
+            <p style={{ marginBottom: 24 }}>
 I enjoy combining experiments with computational tools to understand the
 structure-property relationships that govern material behavior. My work
 often involves thin-film characterization, microscopy, electrical
@@ -1075,13 +1093,13 @@ measurements and finite-element modeling to
 bridge materials science with device engineering.
 </p>
 
-           <p>
-Outside materials, you can find me playing <strong>chess</strong> and
-<strong>cricket</strong>, with a keen personal interest in
-<strong>international diplomacy</strong>.
+           <p style={{ marginBottom: 24 }}>
+Outside materials, you can find me playing chess and
+cricket, with a keen personal interest in
+international diplomacy.
 </p>
 
-<p>
+<p style={{ marginBottom: 24 }}>
 I am always happy to connect with researchers, industry
 professionals and students interested in materials science, semiconductor devices,
 functional thin films, and MEMS technologies.
@@ -1101,17 +1119,6 @@ functional thin films, and MEMS technologies.
                 marginBottom: 18,
               }}
             />
-
-            <div
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: 30,
-                color: "#fff",
-                marginBottom: 6,
-              }}
-            >
-              Krishnadev Pandey
-            </div>
 
             <div
               style={{
