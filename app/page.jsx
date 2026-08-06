@@ -859,7 +859,7 @@ fontSize: 15,
 
 <div
 style={{
-color: "rgba(255,255,255,0.55)",
+color: "rgba(255,255,255,0.65)",
 marginTop: 4,
 fontSize: 14,
 }}
@@ -924,7 +924,7 @@ fontSize: 14,
 
                 <div
                   style={{
-                    color: "rgba(255,255,255,.55)",
+                    color: "rgba(255,255,255,.72)",
                     marginTop: 10,
                     lineHeight: 1.8,
                   }}
