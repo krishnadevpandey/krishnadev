@@ -1237,41 +1237,91 @@ function Footer({ setPage }) {
 
 // ─── APP ROOT ────────────────────────────────────────────────────────────────
 
-export default function App() {
-  const [page, setPage] = useState("home");
-
-  const pages = {
-    home: <HomePage setPage={setPage} />,
-    research: <ResearchPage />,
-    courses: <NotesPage />,
-    cv: <CVPage />,
-    about: <ContactPage />,
-  };
-
+function Footer() {
   return (
-    <div style={{ background: "#060608", minHeight: "100vh", color: "#fff", position: "relative" }}>
-      <style>{`
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.3); border-radius: 2px; }
-        @keyframes tagFloat {
-          from { transform: translateY(0px); }
-          to { transform: translateY(-4px); }
-        }
-        button:hover { opacity: 0.85; }
-        a:hover { opacity: 0.8; }
-      `}</style>
+    <footer
+      style={{
+        borderTop: "1px solid rgba(255,255,255,0.06)",
+        padding: "40px 2.5rem",
+        marginTop: 80,
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 1200,
+          margin: "0 auto",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+          gap: 24,
+        }}
+      >
+        {/* Left */}
 
-      <GridBg />
-      <Nav page={page} setPage={setPage} />
+        <div>
+          <div
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 13,
+              fontWeight: 600,
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "#fff",
+              marginBottom: 8,
+            }}
+          >
+            Krishnadev Pandey
+          </div>
 
-      <main style={{ position: "relative", zIndex: 1 }}>
-        {pages[page] || pages.home}
-      </main>
+          <div
+            style={{
+              color: COLORS.body,
+              fontSize: 14,
+            }}
+          >
+            Feel free to contact me via email or LinkedIn.
+          </div>
+        </div>
 
-      {page === "home" && <Footer setPage={setPage} />}
-    </div>
+        {/* Right */}
+
+        <div
+          style={{
+            display: "flex",
+            gap: 18,
+            alignItems: "center",
+          }}
+        >
+          {/* Email */}
+
+          <a
+            href="mailto:krishnadevpandey417@gmail.com"
+            style={{ color: "#fff" }}
+            aria-label="Email"
+          >
+            <i
+              className="fas fa-envelope"
+              style={{ fontSize: 22 }}
+            />
+          </a>
+
+          {/* LinkedIn */}
+
+          <a
+            href="https://www.linkedin.com/in/krishnadev-pandey"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#0A66C2" }}
+            aria-label="LinkedIn"
+          >
+            <i
+              className="fab fa-linkedin"
+              style={{ fontSize: 24 }}
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
   );
 }
