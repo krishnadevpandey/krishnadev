@@ -830,7 +830,7 @@ function CVPage() {
                 <div
                   style={{
                     color: "#fff",
-                    fontSize: 22,
+                    fontSize: 20,
                     fontWeight: 500,
                   }}
                 >
@@ -838,23 +838,34 @@ function CVPage() {
                 </div>
 
                 <div
-                  style={{
-                    color: COLORS.body,
-                    marginTop: 6,
-                  }}
-                >
-                  {e.inst}
-                </div>
+style={{
+color: COLORS.body,
+marginTop: 6,
+fontSize: 16,
+}}
+>
+{e.inst}
+</div>
 
-                <div
-                  style={{
-                    color: "rgba(255,255,255,.45)",
-                    marginTop: 4,
-                    fontSize: 14,
-                  }}
-                >
-                  {e.detail}
-                </div>
+<div
+style={{
+color: "rgba(255,255,255,0.75)",
+marginTop: 4,
+fontSize: 15,
+}}
+>
+{e.detail}
+</div>
+
+<div
+style={{
+color: "rgba(255,255,255,0.55)",
+marginTop: 4,
+fontSize: 14,
+}}
+>
+{e.cgpa}
+</div>
 
               </div>
 
