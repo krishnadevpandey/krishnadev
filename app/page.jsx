@@ -558,27 +558,37 @@ function ResearchPage() {
 
 function NotesPage() {
   const courseGroups = [
-    {
-      title: "Graduate Coursework*",
-      courses:
-        "Structure and Characterization of Materials, Microscopy and Microanalysis of Materials, Transport Phenomena, Nanostructures and Nanomaterials",
-    },
-    {
-      title: "Characterization & Microscopy",
-      courses:
-        "Materials Characterization, Optical, Electronics and Magnetic Materials",
-    },
-    {
-      title: "Functional Materials",
-      courses:
-        "Ceramic Science and Technology, Fundamentals of Nanotechnology and Nanoscience",
-    },
-    {
-      title: "Materials Mechanics & Processing",
-      courses:
-        "Mechanical Behavior of Materials, Phase Transformation and Heat Treatment",
-    },
-  ];
+  {
+    title: "Graduate Coursework*",
+    courses: [
+      "Structure and Characterization of Materials",
+      "Microscopy and Microanalysis of Materials",
+      "Transport Phenomena",
+      "Nanostructures and Nanomaterials",
+    ],
+  },
+  {
+    title: "Characterization & Microscopy",
+    courses: [
+      "Materials Characterization",
+      "Optical, Electronics and Magnetic Materials",
+    ],
+  },
+  {
+    title: "Functional Materials",
+    courses: [
+      "Ceramic Science and Technology",
+      "Fundamentals of Nanotechnology and Nanoscience",
+    ],
+  },
+  {
+    title: "Materials Mechanics & Processing",
+    courses: [
+      "Mechanical Behavior of Materials",
+      "Phase Transformation and Heat Treatment",
+    ],
+  },
+];
 
   return (
     <div style={{ paddingTop: 110, minHeight: "100vh" }}>
@@ -630,19 +640,19 @@ function CourseRow({ title, courses }) {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "280px 1fr",
-        gap: "40px",
-        padding: "22px 0",
+        gridTemplateColumns: "260px 1fr",
+        gap: "36px",
+        padding: "20px 0",
         borderBottom: "1px solid rgba(255,255,255,0.08)",
       }}
     >
       <div
         style={{
           fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: 22,
+          fontSize: 18,
           fontWeight: 500,
           color: "#fff",
-          lineHeight: 1.4,
+          lineHeight: 1.5,
         }}
       >
         {title}
@@ -651,12 +661,26 @@ function CourseRow({ title, courses }) {
       <div
         style={{
           fontFamily: "'Space Grotesk', sans-serif",
-          fontSize: 17,
+          fontSize: 15,
           color: COLORS.body,
-          lineHeight: 1.9,
+          lineHeight: 2,
         }}
       >
-        {courses}
+        {courses.map((course, index) => (
+          <span key={course}>
+            {course}
+            {index !== courses.length - 1 && (
+              <span
+                style={{
+                  color: "rgba(255,255,255,0.30)",
+                  margin: "0 10px",
+                }}
+              >
+                |
+              </span>
+            )}
+          </span>
+        ))}
       </div>
     </div>
   );
