@@ -166,7 +166,7 @@ const PROJECT_DETAILS = {
         title: "d33 Measurement Methodology",
         text:
           "Extracted d33 coefficients of AlN and PZT thin films deposited on Si/Mo substrates using Laser Doppler Vibrometry. The experimental measurements were compared with finite-element models in COMSOL to validate the measurement approach.",
-        image: "/images/project2-ldv.jpeg",
+        image: "/images/ldv.png",
         imageAlt: "Laser Doppler Vibrometry setup for d33 measurement",
       },
 
@@ -174,7 +174,7 @@ const PROJECT_DETAILS = {
         title: "Substrate-Bending Artifact",
         text:
           "Investigated the influence of substrate bending on thin-film d33 measurements. Electrode geometry was systematically varied to identify a measurement window that reduces bending-induced contributions and better isolates the intrinsic thin-film response.",
-        image: "/images/project2-bending.jpeg",
+        image: "/images/Sub.jpeg",
         imageAlt: "Substrate bending during thin-film piezoelectric measurement",
       },
 
@@ -182,7 +182,7 @@ const PROJECT_DETAILS = {
         title: "Experimental and FEM Validation",
         text:
           "The experimentally extracted d33 response of AlN was compared against a corresponding two-dimensional finite-element model. The experimental value was approximately 5–5.5 pm/V, while the FEM model predicted approximately 4.9 pm/V, showing close agreement between experiment and simulation.",
-        image: "/images/project2-comsol.jpeg",
+        image: "/images/Comsol.png",
         imageAlt: "COMSOL finite-element model for piezoelectric thin-film characterization",
       },
 
@@ -190,7 +190,7 @@ const PROJECT_DETAILS = {
         title: "Ferroelectric Poling",
         text:
           "Compared AC and DC poling protocols for PZT thin films to investigate their influence on piezoelectric response. No significant enhancement in d33 was observed with AC poling, with the response suggesting limitations associated with defect-pinned ferroelectric domain walls.",
-        image: "/images/project2-poling.jpeg",
+        image: "/images/Poling.png",
         imageAlt: "AC and DC poling of PZT thin films",
       },
     ],
