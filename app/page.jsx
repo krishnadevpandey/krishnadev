@@ -248,14 +248,14 @@ function TagPill({ text, i }) {
     <span style={{
       display: "inline-block",
       padding: "6px 16px",
-      border: `1px solid ${c}33`,
+      border: `1px solid ${c}66`,
       borderRadius: 2,
       fontFamily: "'Space Grotesk', sans-serif",
       fontSize: 11,
       letterSpacing: "0.15em",
       textTransform: "uppercase",
       color: c,
-      background: `${c}0a`,
+      background: `${c}14`,
       animation: `tagFloat ${2 + i * 0.3}s ease-in-out infinite alternate`,
     }}>{text}</span>
   );
