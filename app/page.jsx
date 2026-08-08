@@ -1004,9 +1004,9 @@ function ProjectDetailPage({ project, setPage }) {
       style={{
         marginTop: 12,
         fontFamily: "'Space Grotesk', sans-serif",
-        fontSize: 12,
-        lineHeight: 1.6,
-        color: "rgba(255,255,255,0.45)",
+        fontSize: 15,
+        lineHeight: 1.7,
+        color: "rgba(255,255,255,0.75)",
         fontStyle: "italic",
       }}
     >
