@@ -444,16 +444,25 @@ function Affiliations() {
     </section>
   );
 }
-function ProjectBlock({ p, i }) {
+function ProjectBlock({ p, i, setPage }) {
   const [ref, visible] = useInView(0.1);
   const [hovered, setHovered] = useState(false);
   return (
-    <div ref={ref || undefined} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{
+    <div
+  ref={ref || undefined}
+  onMouseEnter={() => setHovered(true)}
+  onMouseLeave={() => setHovered(false)}
+  onClick={() => {
+    setPage(`project-${p.id}`);
+    window.scrollTo(0, 0);
+  }}
+  style={{
+      cursor: "pointer",
       borderTop: "1px solid rgba(255,255,255,0.06)",
       padding: "64px 2.5rem",
       display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center",
       background: hovered ? `${p.accent}` : "transparent",
-      transition: "background 0.6s ease",
+      transition: "background 0.6s ease, transform 0.3s ease",
       opacity: visible ? 1 : 0,
       transform: visible ? "none" : "translateY(30px)",
       transition2: "opacity 0.8s, transform 0.8s",
@@ -550,7 +559,14 @@ function HomePage({ setPage }) {
             <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 14, fontWeight: 600, letterSpacing: "0.25em", textTransform: "uppercase", color: COLORS.nav }}>Research Highlights</span>
           </div>
         </div>
-        {PROJECTS.map((p, i) => <ProjectBlock key={p.id} p={p} i={i} />)}
+        {PROJECTS.map((p, i) => (
+  <ProjectBlock
+    key={p.id}
+    p={p}
+    i={i}
+    setPage={setPage}
+  />
+))}
       </section>
       <QuestionsSection />
     </>
@@ -559,7 +575,7 @@ function HomePage({ setPage }) {
 
 // ─── RESEARCH PAGE ───────────────────────────────────────────────────────────
 
-function ResearchPage() {
+function ResearchPage({ setPage }) {
   return (
     <div style={{ paddingTop: 100 }}>
       <div style={{ padding: "50px 2.5rem 20px" }}>
@@ -590,10 +606,260 @@ function ResearchPage() {
       </div>
 
       {PROJECTS.map((p, i) => (
-        <ProjectBlock key={p.id} p={p} i={i} />
-      ))}
+  <ProjectBlock
+    key={p.id}
+    p={p}
+    i={i}
+    setPage={setPage}
+  />
+))}
 
       <QuestionsSection />
+    </div>
+  );
+}
+
+// ─── Project Detail ───────────────────────────────────────────────────────────
+
+function ProjectDetailPage({ project, setPage }) {
+  if (!project) return null;
+
+  return (
+    <div style={{ paddingTop: 110 }}>
+      <div
+        style={{
+          maxWidth: 1100,
+          margin: "0 auto",
+          padding: "40px 2.5rem 100px",
+        }}
+      >
+
+        {/* Back */}
+        <button
+          onClick={() => {
+            setPage("research");
+            window.scrollTo(0, 0);
+          }}
+          style={{
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+            color: "#00d4ff",
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 12,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            padding: 0,
+            marginBottom: 45,
+          }}
+        >
+          ← Back to Research
+        </button>
+
+        {/* Project title */}
+        <div style={{ marginBottom: 45 }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              marginBottom: 18,
+            }}
+          >
+            <div
+              style={{
+                width: 40,
+                height: 1,
+                background: project.color,
+              }}
+            />
+
+            <span
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 11,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: project.color,
+              }}
+            >
+              {project.lab}
+            </span>
+          </div>
+
+          <h1
+            style={{
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+              fontWeight: 400,
+              lineHeight: 1.1,
+              color: "#fff",
+              margin: 0,
+              fontStyle: "italic",
+            }}
+          >
+            {project.title}
+          </h1>
+        </div>
+
+        {/* Main image */}
+        <div
+          style={{
+            width: "100%",
+            aspectRatio: "16/9",
+            background: project.gradient,
+            borderRadius: 4,
+            border: `1px solid ${project.color}33`,
+            overflow: "hidden",
+            marginBottom: 55,
+          }}
+        >
+          <img
+            src={project.image}
+            alt={project.imageAlt}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+            }}
+          />
+        </div>
+
+        {/* Content */}
+        <div
+          style={{
+            maxWidth: 850,
+          }}
+        >
+
+          {/* Overview */}
+          <div style={{ marginBottom: 45 }}>
+            <h2
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 14,
+                fontWeight: 600,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: project.color,
+                marginBottom: 18,
+              }}
+            >
+              Project Overview
+            </h2>
+
+            <p
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 17,
+                lineHeight: 1.9,
+                color: COLORS.body,
+                margin: 0,
+              }}
+            >
+              {project.desc}
+            </p>
+          </div>
+
+          {/* Areas */}
+          <div style={{ marginBottom: 45 }}>
+            <h2
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 14,
+                fontWeight: 600,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: project.color,
+                marginBottom: 20,
+              }}
+            >
+              Key Areas
+            </h2>
+
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 10,
+              }}
+            >
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: 11,
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color: COLORS.body,
+                    border: "1px solid rgba(255,255,255,0.14)",
+                    borderRadius: 2,
+                    padding: "7px 12px",
+                  }}
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Project description */}
+          <div>
+            <h2
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 14,
+                fontWeight: 600,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: project.color,
+                marginBottom: 18,
+              }}
+            >
+              Research Details
+            </h2>
+
+            <p
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: 17,
+                lineHeight: 1.9,
+                color: COLORS.body,
+                margin: 0,
+              }}
+            >
+              {project.desc}
+            </p>
+          </div>
+
+        </div>
+
+        {/* Back button */}
+        <div style={{ marginTop: 70 }}>
+          <button
+            onClick={() => {
+              setPage("research");
+              window.scrollTo(0, 0);
+            }}
+            style={{
+              background: "none",
+              border: `1px solid ${project.color}55`,
+              color: project.color,
+              cursor: "pointer",
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 11,
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              padding: "12px 20px",
+              borderRadius: 2,
+            }}
+          >
+            ← Back to Research
+          </button>
+        </div>
+
+      </div>
     </div>
   );
 }
@@ -1308,12 +1574,40 @@ export default function App() {
   const [page, setPage] = useState("home");
 
   const pages = {
-    home: <HomePage setPage={setPage} />,
-    research: <ResearchPage />,
-    courses: <NotesPage />,
-    cv: <CVPage />,
-    about: <ContactPage />,
-  };
+  home: <HomePage setPage={setPage} />,
+  research: <ResearchPage setPage={setPage} />,
+  courses: <NotesPage />,
+  cv: <CVPage />,
+  about: <ContactPage />,
+
+  "project-01": (
+    <ProjectDetailPage
+      project={PROJECTS.find((p) => p.id === "01")}
+      setPage={setPage}
+    />
+  ),
+
+  "project-02": (
+    <ProjectDetailPage
+      project={PROJECTS.find((p) => p.id === "02")}
+      setPage={setPage}
+    />
+  ),
+
+  "project-03": (
+    <ProjectDetailPage
+      project={PROJECTS.find((p) => p.id === "03")}
+      setPage={setPage}
+    />
+  ),
+
+  "project-04": (
+    <ProjectDetailPage
+      project={PROJECTS.find((p) => p.id === "04")}
+      setPage={setPage}
+    />
+  ),
+};
 
   return (
     <div style={{ background: "#060608", minHeight: "100vh", color: "#fff", position: "relative" }}>
