@@ -85,6 +85,254 @@ const PROJECTS = [
   },
 ];
 
+// ─── DETAILED PROJECT INFORMATION ────────────────────────────────────────────
+
+const PROJECT_DETAILS = {
+  "01": {
+    objective:
+      "To investigate how electrode architectures and thin-film properties influence the electrical, piezoelectric, and electromechanical performance of PZT-based piezoelectric MEMS devices.",
+
+    sections: [
+      {
+        title: "Wafer-Level Characterization",
+        text:
+          "Characterized more than 270 circular PZT capacitor test structures across 4-inch (100)- and (111)-oriented wafers to evaluate device yield, leakage behavior, dielectric response, and spatial uniformity. The measurements enabled wafer-level identification of shorted devices and process-related variations.",
+        image: "/images/project1-wafer.jpeg",
+        imageAlt: "Wafer-level characterization of PZT capacitor devices",
+      },
+
+      {
+        title: "Piezoelectric Coefficient Extraction",
+        text:
+          "Extracted the in-plane piezoelectric coefficients d31 and e31,f for PZT and AlN microcantilevers using Laser Doppler Vibrometry. The measured electromechanical response was analyzed using a MATLAB-based model to relate cantilever displacement to the thin-film piezoelectric response.",
+        image: "/images/project1-cantilever.jpeg",
+        imageAlt: "PZT and AlN cantilever characterization using LDV",
+      },
+
+      {
+        title: "PMUT Interface Engineering",
+        text:
+          "Investigated the effect of bottom-electrode architecture on PMUT performance by comparing single-, bilayer-, and composite-Pt configurations. Resonance behavior, displacement profiles, and electrical output were characterized using Laser Doppler Vibrometry and lock-in amplifier measurements.",
+        image: "/images/project1-pmut.jpeg",
+        imageAlt: "PMUT electrode architectures and characterization",
+      },
+
+      {
+        title: "Electrical and Ferroelectric Characterization",
+        text:
+          "Investigated anomalous transient I–V spikes and separated measurement-acquisition artifacts from intrinsic leakage mechanisms. Time-dependent electrical characterization helped distinguish Poole–Frenkel emission and Schottky barrier injection, while P–E and butterfly C–V measurements were used to study ferroelectric behavior and interface effects.",
+        image: "/images/project1-electrical.jpeg",
+        imageAlt: "Electrical characterization of PZT devices",
+      },
+    ],
+
+    results: [
+      {
+        value: "270+",
+        label: "PZT capacitor structures characterized",
+      },
+      {
+        value: "≤5%",
+        label: "Wafer-level shorting rate",
+      },
+      {
+        value: "5.80%",
+        label: "Increase in peripheral PMUT displacement",
+      },
+      {
+        value: "1.65×",
+        label: "Peak output voltage enhancement",
+      },
+      {
+        value: "48.848 mV",
+        label: "Peak PMUT output voltage",
+      },
+      {
+        value: "εr ≈ 1118",
+        label: "Extracted thin-film permittivity",
+      },
+    ],
+
+    methods:
+      "PZT thin films · AlN thin films · P–E characterization · C–V characterization · I–V characterization · Laser Doppler Vibrometry · Lock-in Amplifier · DC Probe Station · Precision Multiferroic · MATLAB",
+  },
+
+  "02": {
+    objective:
+      "To establish reliable methodologies for piezoelectric d33 extraction and investigate the influence of measurement geometry and ferroelectric poling on thin-film piezoelectric response.",
+
+    sections: [
+      {
+        title: "d33 Measurement Methodology",
+        text:
+          "Extracted d33 coefficients of AlN and PZT thin films deposited on Si/Mo substrates using Laser Doppler Vibrometry. The experimental measurements were compared with finite-element models in COMSOL to validate the measurement approach.",
+        image: "/images/project2-ldv.jpeg",
+        imageAlt: "Laser Doppler Vibrometry setup for d33 measurement",
+      },
+
+      {
+        title: "Substrate-Bending Artifact",
+        text:
+          "Investigated the influence of substrate bending on thin-film d33 measurements. Electrode geometry was systematically varied to identify a measurement window that reduces bending-induced contributions and better isolates the intrinsic thin-film response.",
+        image: "/images/project2-bending.jpeg",
+        imageAlt: "Substrate bending during thin-film piezoelectric measurement",
+      },
+
+      {
+        title: "Experimental and FEM Validation",
+        text:
+          "The experimentally extracted d33 response of AlN was compared against a corresponding two-dimensional finite-element model. The experimental value was approximately 5–5.5 pm/V, while the FEM model predicted approximately 4.9 pm/V, showing close agreement between experiment and simulation.",
+        image: "/images/project2-comsol.jpeg",
+        imageAlt: "COMSOL finite-element model for piezoelectric thin-film characterization",
+      },
+
+      {
+        title: "Ferroelectric Poling",
+        text:
+          "Compared AC and DC poling protocols for PZT thin films to investigate their influence on piezoelectric response. No significant enhancement in d33 was observed with AC poling, with the response suggesting limitations associated with defect-pinned ferroelectric domain walls.",
+        image: "/images/project2-poling.jpeg",
+        imageAlt: "AC and DC poling of PZT thin films",
+      },
+    ],
+
+    results: [
+      {
+        value: "5–5.5 pm/V",
+        label: "Measured AlN d33",
+      },
+      {
+        value: "4.9 pm/V",
+        label: "COMSOL-predicted AlN d33",
+      },
+      {
+        value: "250–300 µm",
+        label: "Optimized electrode diameter range",
+      },
+      {
+        value: "PZT + AlN",
+        label: "Thin films characterized",
+      },
+    ],
+
+    methods:
+      "Laser Doppler Vibrometry · COMSOL Multiphysics · PZT · AlN · Thin-film piezoelectric characterization · AC/DC poling · Electrode geometry optimization",
+  },
+
+  "03": {
+    objective:
+      "To synthesize single-phase lead zirconate titanate (PZT) ceramics through mechanochemical processing and investigate their phase formation, microstructure, and electronic structure using experimental characterization and first-principles calculations.",
+
+    sections: [
+      {
+        title: "Mechanochemical Synthesis",
+        text:
+          "Synthesized PZT ceramics using high-energy planetary ball milling of the constituent oxide powders. Milling duration and subsequent calcination conditions were investigated to develop a route toward phase-pure PZT.",
+        image: "/images/project3-milling.jpeg",
+        imageAlt: "Planetary ball milling used for PZT synthesis",
+      },
+
+      {
+        title: "Phase Formation",
+        text:
+          "X-ray diffraction was used to monitor phase evolution during milling. The PZT perovskite phase was observed to form within approximately two hours of milling, demonstrating the effectiveness of the mechanochemical synthesis route.",
+        image: "/images/XRD.jpeg",
+        imageAlt: "XRD analysis showing PZT phase formation",
+      },
+
+      {
+        title: "Microstructural Evolution",
+        text:
+          "Scanning electron microscopy was used to examine the microstructural evolution of the synthesized ceramics as a function of processing conditions. Changes in morphology, densification, and porosity were correlated with milling duration.",
+        image: "/images/project3-sem.jpeg",
+        imageAlt: "SEM microstructure of PZT ceramics",
+      },
+
+      {
+        title: "First-Principles Analysis",
+        text:
+          "Density functional theory calculations were performed using DMol³ in Materials Studio to investigate the electronic structure of PZT. Band-structure and density-of-states calculations were used to analyze its electronic behavior.",
+        image: "/images/project3-dft.jpeg",
+        imageAlt: "DFT band structure and density of states of PZT",
+      },
+    ],
+
+    results: [
+      {
+        value: "2 h",
+        label: "Time for perovskite phase formation",
+      },
+      {
+        value: "0–6 h",
+        label: "Milling-duration range studied",
+      },
+      {
+        value: "DFT",
+        label: "Band structure and DOS analysis",
+      },
+    ],
+
+    methods:
+      "Planetary Ball Milling · XRD · SEM · Raman Spectroscopy · FTIR · Density Functional Theory · DMol³ · Materials Studio · Band Structure · Density of States",
+  },
+
+  "04": {
+    objective:
+      "To investigate crystallographic orientation selection during CdZnTe single-crystal growth and evaluate the effects of DC and pulsed/AC poling on the piezoelectric response of PMN-PT single crystals.",
+
+    sections: [
+      {
+        title: "CdZnTe Crystal Growth",
+        text:
+          "Investigated seed-orientation selection during CdZnTe single-crystal growth, with particular emphasis on twinning and single-crystal yield. The (111) orientation was identified as the preferred seed plane for reducing twinning and improving crystal yield.",
+        image: "/images/project4-cdznte.jpeg",
+        imageAlt: "CdZnTe single-crystal growth and orientation selection",
+      },
+
+      {
+        title: "PMN-PT Poling",
+        text:
+          "Examined the effect of different electrical poling strategies on PMN-PT single crystals. DC and pulsed/AC poling approaches were compared to understand their influence on the resulting piezoelectric response.",
+        image: "/images/project4-poling.jpeg",
+        imageAlt: "Comparison of electrical poling strategies for PMN-PT",
+      },
+
+      {
+        title: "Piezoelectric Response",
+        text:
+          "The piezoelectric response of PMN-PT single crystals was evaluated following different poling conditions. AC/pulsed poling produced a higher response than conventional DC poling, with an approximately 36% improvement reported in the project analysis.",
+        image: "/images/project4-d33.jpeg",
+        imageAlt: "PMN-PT piezoelectric response after different poling conditions",
+      },
+
+      {
+        title: "Phase-Equilibria Analysis",
+        text:
+          "Binary and ternary phase diagrams were analyzed to understand phase relationships relevant to the materials investigated during the project. The phase-equilibria analysis was also presented as a technical seminar to the DRDO research group.",
+        image: "/images/project4-phase-diagram.jpeg",
+        imageAlt: "Phase diagram analysis performed during the project",
+      },
+    ],
+
+    results: [
+      {
+        value: "(111)",
+        label: "Preferred CdZnTe seed orientation",
+      },
+      {
+        value: "36%",
+        label: "Improvement with AC/pulsed poling",
+      },
+      {
+        value: "PMN-PT",
+        label: "Single-crystal piezoelectric material studied",
+      },
+    ],
+
+    methods:
+      "CdZnTe Crystal Growth · Crystallographic Orientation · PMN-PT · AC/DC Poling · Piezoelectric Characterization · Phase-Equilibria Analysis",
+  },
+};
+
 const QUESTIONS = [
   "When does an interface stop being passive and start dictating device physics?",
   "How do we distinguish intrinsic material properties from measurement artifacts?",
@@ -624,17 +872,21 @@ function ResearchPage({ setPage }) {
 function ProjectDetailPage({ project, setPage }) {
   if (!project) return null;
 
+  const detail = PROJECT_DETAILS[project.id];
+
+  if (!detail) return null;
+
   return (
     <div style={{ paddingTop: 110 }}>
       <div
         style={{
           maxWidth: 1100,
           margin: "0 auto",
-          padding: "40px 2.5rem 100px",
+          padding: "40px 2.5rem 120px",
         }}
       >
 
-        {/* Back */}
+        {/* BACK */}
         <button
           onClick={() => {
             setPage("research");
@@ -644,26 +896,28 @@ function ProjectDetailPage({ project, setPage }) {
             background: "none",
             border: "none",
             cursor: "pointer",
-            color: "#00d4ff",
+            color: project.color,
             fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: 12,
+            fontSize: 11,
             letterSpacing: "0.15em",
             textTransform: "uppercase",
             padding: 0,
-            marginBottom: 45,
+            marginBottom: 50,
           }}
         >
           ← Back to Research
         </button>
 
-        {/* Project title */}
-        <div style={{ marginBottom: 45 }}>
+
+        {/* HEADER */}
+        <section style={{ marginBottom: 65 }}>
+
           <div
             style={{
               display: "flex",
               alignItems: "center",
               gap: 12,
-              marginBottom: 18,
+              marginBottom: 20,
             }}
           >
             <div
@@ -687,31 +941,47 @@ function ProjectDetailPage({ project, setPage }) {
             </span>
           </div>
 
+
           <h1
             style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+              fontSize: "clamp(2.8rem, 5vw, 5rem)",
               fontWeight: 400,
-              lineHeight: 1.1,
+              lineHeight: 1.05,
               color: "#fff",
-              margin: 0,
+              margin: "0 0 25px",
               fontStyle: "italic",
             }}
           >
             {project.title}
           </h1>
-        </div>
 
-        {/* Main image */}
+
+          <p
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 17,
+              lineHeight: 1.8,
+              color: COLORS.body,
+              maxWidth: 850,
+            }}
+          >
+            {project.desc}
+          </p>
+
+        </section>
+
+
+        {/* HERO IMAGE */}
         <div
           style={{
             width: "100%",
-            aspectRatio: "16/9",
+            maxHeight: 560,
             background: project.gradient,
             borderRadius: 4,
             border: `1px solid ${project.color}33`,
             overflow: "hidden",
-            marginBottom: 55,
+            marginBottom: 75,
           }}
         >
           <img
@@ -719,145 +989,275 @@ function ProjectDetailPage({ project, setPage }) {
             alt={project.imageAlt}
             style={{
               width: "100%",
-              height: "100%",
+              maxHeight: 560,
+              display: "block",
               objectFit: "contain",
             }}
           />
         </div>
 
-        {/* Content */}
-        <div
+
+        {/* OBJECTIVE */}
+        <section
           style={{
-            maxWidth: 850,
+            maxWidth: 900,
+            marginBottom: 80,
           }}
         >
 
-          {/* Overview */}
-          <div style={{ marginBottom: 45 }}>
-            <h2
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 14,
-                fontWeight: 600,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: project.color,
-                marginBottom: 18,
-              }}
-            >
-              Project Overview
-            </h2>
-
-            <p
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 17,
-                lineHeight: 1.9,
-                color: COLORS.body,
-                margin: 0,
-              }}
-            >
-              {project.desc}
-            </p>
-          </div>
-
-          {/* Areas */}
-          <div style={{ marginBottom: 45 }}>
-            <h2
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 14,
-                fontWeight: 600,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: project.color,
-                marginBottom: 20,
-              }}
-            >
-              Key Areas
-            </h2>
-
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: 10,
-              }}
-            >
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: 11,
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    color: COLORS.body,
-                    border: "1px solid rgba(255,255,255,0.14)",
-                    borderRadius: 2,
-                    padding: "7px 12px",
-                  }}
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Project description */}
-          <div>
-            <h2
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 14,
-                fontWeight: 600,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: project.color,
-                marginBottom: 18,
-              }}
-            >
-              Research Details
-            </h2>
-
-            <p
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 17,
-                lineHeight: 1.9,
-                color: COLORS.body,
-                margin: 0,
-              }}
-            >
-              {project.desc}
-            </p>
-          </div>
-
-        </div>
-
-        {/* Back button */}
-        <div style={{ marginTop: 70 }}>
-          <button
-            onClick={() => {
-              setPage("research");
-              window.scrollTo(0, 0);
-            }}
+          <div
             style={{
-              background: "none",
-              border: `1px solid ${project.color}55`,
-              color: project.color,
-              cursor: "pointer",
               fontFamily: "'Space Grotesk', sans-serif",
               fontSize: 11,
-              letterSpacing: "0.15em",
+              letterSpacing: "0.18em",
               textTransform: "uppercase",
-              padding: "12px 20px",
-              borderRadius: 2,
+              color: project.color,
+              marginBottom: 18,
             }}
           >
-            ← Back to Research
-          </button>
-        </div>
+            Objective
+          </div>
+
+          <p
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 18,
+              lineHeight: 1.9,
+              color: COLORS.body,
+            }}
+          >
+            {detail.objective}
+          </p>
+
+        </section>
+
+
+        {/* PROJECT SECTIONS */}
+        <section>
+
+          {detail.sections.map((section, index) => {
+
+            const imageLeft = index % 2 === 0;
+
+            return (
+              <div
+                key={section.title}
+                className="project-detail-section"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 60,
+                  alignItems: "center",
+                  marginBottom: 95,
+                }}
+              >
+
+                {/* IMAGE */}
+                <div
+                  style={{
+                    order: imageLeft ? 0 : 1,
+                    background: project.gradient,
+                    border: `1px solid ${project.color}22`,
+                    borderRadius: 4,
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src={section.image}
+                    alt={section.imageAlt}
+                    style={{
+                      width: "100%",
+                      display: "block",
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
+
+
+                {/* TEXT */}
+                <div
+                  style={{
+                    order: imageLeft ? 1 : 0,
+                  }}
+                >
+
+                  <div
+                    style={{
+                      fontFamily: "'Space Grotesk', sans-serif",
+                      fontSize: 10,
+                      letterSpacing: "0.18em",
+                      textTransform: "uppercase",
+                      color: project.color,
+                      marginBottom: 12,
+                    }}
+                  >
+                    0{index + 1}
+                  </div>
+
+
+                  <h2
+                    style={{
+                      fontFamily: "'Cormorant Garamond', serif",
+                      fontSize: "clamp(2rem, 3vw, 3rem)",
+                      fontWeight: 400,
+                      fontStyle: "italic",
+                      lineHeight: 1.15,
+                      color: "#fff",
+                      marginBottom: 18,
+                    }}
+                  >
+                    {section.title}
+                  </h2>
+
+
+                  <p
+                    style={{
+                      fontFamily: "'Space Grotesk', sans-serif",
+                      fontSize: 15,
+                      lineHeight: 1.9,
+                      color: COLORS.body,
+                    }}
+                  >
+                    {section.text}
+                  </p>
+
+                </div>
+
+              </div>
+            );
+          })}
+
+        </section>
+
+
+        {/* KEY RESULTS */}
+        <section
+          style={{
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+            paddingTop: 45,
+            marginBottom: 70,
+          }}
+        >
+
+          <div
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: project.color,
+              marginBottom: 28,
+            }}
+          >
+            Key Results
+          </div>
+
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: 18,
+            }}
+          >
+
+            {detail.results.map((result, index) => (
+              <div
+                key={index}
+                style={{
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  padding: "25px 22px",
+                }}
+              >
+
+                <div
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: 32,
+                    color: project.color,
+                    marginBottom: 8,
+                  }}
+                >
+                  {result.value}
+                </div>
+
+                <div
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: 12,
+                    lineHeight: 1.6,
+                    color: "rgba(255,255,255,0.55)",
+                  }}
+                >
+                  {result.label}
+                </div>
+
+              </div>
+            ))}
+
+          </div>
+
+        </section>
+
+
+        {/* METHODS */}
+        <section
+          style={{
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+            paddingTop: 45,
+            maxWidth: 900,
+            marginBottom: 80,
+          }}
+        >
+
+          <div
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 11,
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: project.color,
+              marginBottom: 18,
+            }}
+          >
+            Methods & Tools
+          </div>
+
+          <p
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 15,
+              lineHeight: 1.9,
+              color: COLORS.body,
+            }}
+          >
+            {detail.methods}
+          </p>
+
+        </section>
+
+
+        {/* BACK */}
+        <button
+          onClick={() => {
+            setPage("research");
+            window.scrollTo(0, 0);
+          }}
+          style={{
+            background: "none",
+            border: `1px solid ${project.color}55`,
+            color: project.color,
+            cursor: "pointer",
+            fontFamily: "'Space Grotesk', sans-serif",
+            fontSize: 11,
+            letterSpacing: "0.15em",
+            textTransform: "uppercase",
+            padding: "12px 20px",
+            borderRadius: 2,
+          }}
+        >
+          ← Back to Research
+        </button>
 
       </div>
     </div>
@@ -1623,6 +2023,12 @@ export default function App() {
         }
         button:hover { opacity: 0.85; }
         a:hover { opacity: 0.8; }
+        @media (max-width: 750px) {
+  .project-detail-section {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+}
       `}</style>
 
       <GridBg />
