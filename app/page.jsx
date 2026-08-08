@@ -125,7 +125,7 @@ const PROJECT_DETAILS = {
         title: "Electrical and Ferroelectric Characterization",
         text:
           "Investigated anomalous transient I–V spikes and separated measurement-acquisition artifacts from intrinsic leakage mechanisms. Time-dependent electrical characterization helped distinguish Poole–Frenkel emission and Schottky barrier injection, while P–E and butterfly C–V measurements were used to study ferroelectric behavior and interface effects.",
-        image: "/images/project1-electrical.jpeg",
+        image: "/images/PE.jpg",
         imageAlt: "Electrical characterization of PZT devices",
       },
     ],
