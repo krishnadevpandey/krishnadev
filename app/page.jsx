@@ -140,19 +140,11 @@ const PROJECT_DETAILS = {
         label: "Wafer-level shorting rate",
       },
       {
-        value: "5.80%",
-        label: "Increase in peripheral PMUT displacement",
+        value: "Double-layer Pt",
+        label: "Higher PMUT performance than single-layer Pt",
       },
       {
-        value: "1.65×",
-        label: "Peak output voltage enhancement",
-      },
-      {
-        value: "48.848 mV",
-        label: "Peak PMUT output voltage",
-      },
-      {
-        value: "εr ≈ 1118",
+        value: "εr ≈ 948",
         label: "Extracted thin-film permittivity",
       },
     ],
