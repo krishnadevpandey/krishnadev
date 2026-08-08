@@ -952,15 +952,34 @@ function ProjectDetailPage({ project, setPage }) {
   </h1>
 
   <div
-    style={{
-      fontFamily: "'Space Grotesk', sans-serif",
-      fontSize: 14,
-      lineHeight: 1.7,
-      color: "rgba(255,255,255,0.65)",
-    }}
-  >
-    Guide:{" "}
+  style={{
+    fontFamily: "'Space Grotesk', sans-serif",
+    fontSize: 14,
+    lineHeight: 1.7,
+    color: "rgba(255,255,255,0.65)",
+  }}
+>
+  Guide:{" "}
 
+  {detail.guides ? (
+    detail.guides.map((guide, index) => (
+      <span key={guide.name}>
+        <a
+          href={guide.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            color: project.color,
+            textDecoration: "none",
+          }}
+        >
+          {guide.name}
+        </a>
+
+        {index < detail.guides.length - 1 && " & "}
+      </span>
+    ))
+  ) : (
     <a
       href={detail.guideLink}
       target="_blank"
@@ -972,46 +991,14 @@ function ProjectDetailPage({ project, setPage }) {
     >
       {detail.guide}
     </a>
+  )}
 
-    {" · "}
+  {" · "}
 
-    <span>
-      {detail.institute}
-    </span>
-  </div>
+  <span>{detail.institute}</span>
+</div>
 
 </section>
-
-
-          <h1
-            style={{
-              fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "clamp(2.8rem, 5vw, 5rem)",
-              fontWeight: 400,
-              lineHeight: 1.05,
-              color: "#fff",
-              margin: "0 0 25px",
-              fontStyle: "italic",
-            }}
-          >
-            {project.title}
-          </h1>
-
-
-          <p
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 17,
-              lineHeight: 1.8,
-              color: COLORS.body,
-              maxWidth: 850,
-            }}
-          >
-            {project.desc}
-          </p>
-
-        </section>
-
 
         {/* HERO IMAGE */}
         <div style={{ marginBottom: 55 }}>
