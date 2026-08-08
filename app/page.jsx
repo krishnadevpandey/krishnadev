@@ -89,6 +89,9 @@ const PROJECTS = [
 
 const PROJECT_DETAILS = {
   "01": {
+    guide: "Prof. Gayathri Pillai",
+    guideLink: "https://www.cense.iisc.ac.in/gayathri-pillai/",
+    institute: "Centre for Nano Science and Engineering, IISc Bangalore",
     caption: "PZT PMUT device characterized using Laser Doppler Vibrometry to evaluate its electromechanical response.",
     objective:
       "To investigate how electrode architectures and thin-film properties influence the electrical, piezoelectric, and electromechanical performance of PZT-based piezoelectric MEMS devices.",
@@ -159,6 +162,9 @@ const PROJECT_DETAILS = {
   },
 
   "02": {
+    guide: "Prof. Gayathri Pillai",
+    guideLink: "https://www.cense.iisc.ac.in/gayathri-pillai/",
+    institute: "Centre for Nano Science and Engineering, IISc Bangalore",
     caption: "Laser Doppler Vibrometry-based characterization of piezoelectric thin-film response.",
     objective:
       "To establish reliable methodologies for piezoelectric d33 extraction and investigate the influence of measurement geometry and ferroelectric poling on thin-film piezoelectric response.",
@@ -221,6 +227,18 @@ const PROJECT_DETAILS = {
   },
 
   "03": {
+    guides: [
+    {
+      name: "Prof. Abhilash Gunti",
+      link: "https://cse.manit.ac.in/content/dr-abhilash-gunti",
+    },
+    {
+      name: "Prof. Sanjay Srivastava",
+      link: "https://www.manit.ac.in/content/dr-sanjay-srivastava",
+    },
+  ],
+
+  institute: "MANIT Bhopal",
     caption: "X-ray diffraction analysis of PZT ceramics showing the evolution of the perovskite phase during mechanochemical synthesis.",
     objective:
       "To synthesize single-phase lead zirconate titanate (PZT) ceramics through mechanochemical processing and investigate their phase formation, microstructure, and electronic structure using experimental characterization and first-principles calculations.",
@@ -279,6 +297,9 @@ const PROJECT_DETAILS = {
   },
 
   "04": {
+    guide: "Manish Kumar Sinha, Scientist-E",
+    guideLink: "mailto:sinha.manish.sspl@gov.in",
+    institute: "Solid State Physics Laboratory, DRDO Delhi",
     caption: "PMN-PT single-crystal characterization following different electrical poling conditions.",
     objective:
       "To investigate crystallographic orientation selection during CdZnTe single-crystal growth and evaluate the effects of DC and pulsed/AC poling on the piezoelectric response of PMN-PT single crystals.",
@@ -914,36 +935,52 @@ function ProjectDetailPage({ project, setPage }) {
 
 
         {/* HEADER */}
-        <section style={{ marginBottom: 65 }}>
+<section style={{ marginBottom: 50 }}>
 
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              marginBottom: 20,
-            }}
-          >
-            <div
-              style={{
-                width: 40,
-                height: 1,
-                background: project.color,
-              }}
-            />
+  <h1
+    style={{
+      fontFamily: "'Cormorant Garamond', serif",
+      fontSize: "clamp(3rem, 6vw, 5.5rem)",
+      fontWeight: 400,
+      lineHeight: 1.05,
+      color: "#fff",
+      margin: "0 0 20px",
+      fontStyle: "italic",
+    }}
+  >
+    {project.title}
+  </h1>
 
-            <span
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 11,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: project.color,
-              }}
-            >
-              {project.lab}
-            </span>
-          </div>
+  <div
+    style={{
+      fontFamily: "'Space Grotesk', sans-serif",
+      fontSize: 14,
+      lineHeight: 1.7,
+      color: "rgba(255,255,255,0.65)",
+    }}
+  >
+    Guide:{" "}
+
+    <a
+      href={detail.guideLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        color: project.color,
+        textDecoration: "none",
+      }}
+    >
+      {detail.guide}
+    </a>
+
+    {" · "}
+
+    <span>
+      {detail.institute}
+    </span>
+  </div>
+
+</section>
 
 
           <h1
@@ -1006,7 +1043,7 @@ function ProjectDetailPage({ project, setPage }) {
         fontFamily: "'Space Grotesk', sans-serif",
         fontSize: 15,
         lineHeight: 1.7,
-        color: "rgba(255,255,255,0.75)",
+        color: "rgba(255,255,255,0.85)",
         fontStyle: "italic",
       }}
     >
@@ -1017,39 +1054,37 @@ function ProjectDetailPage({ project, setPage }) {
 
 
         {/* OBJECTIVE */}
-        <section
-          style={{
-            maxWidth: 900,
-            marginBottom: 80,
-          }}
-        >
+<section
+  style={{
+    maxWidth: 900,
+    marginBottom: 80,
+  }}
+>
+  <div
+    style={{
+      fontFamily: "'Space Grotesk', sans-serif",
+      fontSize: 11,
+      fontWeight: 600,
+      letterSpacing: "0.18em",
+      textTransform: "uppercase",
+      color: project.color,
+      marginBottom: 18,
+    }}
+  >
+    Objective
+  </div>
 
-          <div
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 11,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: project.color,
-              marginBottom: 18,
-            }}
-          >
-            Objective
-          </div>
-
-          <p
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 18,
-              lineHeight: 1.9,
-              color: COLORS.body,
-            }}
-          >
-            {detail.objective}
-          </p>
-
-        </section>
-
+  <p
+    style={{
+      fontFamily: "'Space Grotesk', sans-serif",
+      fontSize: 18,
+      lineHeight: 1.9,
+      color: COLORS.body,
+    }}
+  >
+    {detail.objective}
+  </p>
+</section>
 
         {/* PROJECT SECTIONS */}
         <section>
