@@ -285,14 +285,14 @@ const PROJECT_DETAILS = {
     ],
 
     methods:
-      "Planetary Ball Milling · XRD · SEM · Raman Spectroscopy · FTIR · Density Functional Theory · DMol³ · Materials Studio · Band Structure · Density of States",
+      "Planetary Ball Milling · XRD · SEM · Materials Studio · Band Structure · Density of States",
   },
 
   "04": {
     guide: "Manish Kumar Sinha, Scientist-E",
     guideLink: "mailto:sinha.manish.sspl@gov.in",
     institute: "Solid State Physics Laboratory, DRDO Delhi",
-    caption: "PMN-PT single-crystal characterization following different electrical poling conditions.",
+    caption: "Crystal Structure of CdZnTe and PMN-PT",
     objective:
       "To investigate crystallographic orientation selection during CdZnTe single-crystal growth and evaluate the effects of DC and pulsed/AC poling on the piezoelectric response of PMN-PT single crystals.",
 
@@ -301,7 +301,7 @@ const PROJECT_DETAILS = {
         title: "CdZnTe Crystal Growth",
         text:
           "Investigated seed-orientation selection during CdZnTe single-crystal growth, with particular emphasis on twinning and single-crystal yield. The (111) orientation was identified as the preferred seed plane for reducing twinning and improving crystal yield.",
-        image: "/images/project4-cdznte.jpeg",
+        image: "/images/CZT.png",
         imageAlt: "CdZnTe single-crystal growth and orientation selection",
       },
 
@@ -309,23 +309,15 @@ const PROJECT_DETAILS = {
         title: "PMN-PT Poling",
         text:
           "Examined the effect of different electrical poling strategies on PMN-PT single crystals. DC and pulsed/AC poling approaches were compared to understand their influence on the resulting piezoelectric response.",
-        image: "/images/project4-poling.jpeg",
+        image: "/images/acp.jpg",
         imageAlt: "Comparison of electrical poling strategies for PMN-PT",
-      },
-
-      {
-        title: "Piezoelectric Response",
-        text:
-          "The piezoelectric response of PMN-PT single crystals was evaluated following different poling conditions. AC/pulsed poling produced a higher response than conventional DC poling, with an approximately 36% improvement reported in the project analysis.",
-        image: "/images/project4-d33.jpeg",
-        imageAlt: "PMN-PT piezoelectric response after different poling conditions",
       },
 
       {
         title: "Phase-Equilibria Analysis",
         text:
           "Binary and ternary phase diagrams were analyzed to understand phase relationships relevant to the materials investigated during the project. The phase-equilibria analysis was also presented as a technical seminar to the DRDO research group.",
-        image: "/images/project4-phase-diagram.jpeg",
+        image: "/images/thermo.png",
         imageAlt: "Phase diagram analysis performed during the project",
       },
     ],
