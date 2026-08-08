@@ -954,9 +954,9 @@ function ProjectDetailPage({ project, setPage }) {
   <div
   style={{
     fontFamily: "'Space Grotesk', sans-serif",
-    fontSize: 14,
+    fontSize: 16,
     lineHeight: 1.7,
-    color: "rgba(255,255,255,0.65)",
+    color: "rgba(255,255,255,0.8)",
   }}
 >
   Guide:{" "}
@@ -993,7 +993,7 @@ function ProjectDetailPage({ project, setPage }) {
     </a>
   )}
 
-  {" · "}
+  {" , "}
 
   <span>{detail.institute}</span>
 </div>
