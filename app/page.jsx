@@ -240,7 +240,7 @@ const PROJECT_DETAILS = {
         title: "Mechanochemical Synthesis",
         text:
           "Synthesized PZT ceramics using high-energy planetary ball milling of the constituent oxide powders. Milling duration and subsequent calcination conditions were investigated to develop a route toward phase-pure PZT.",
-        image: "/images/project3-milling.jpeg",
+        image: "/images/ball.png",
         imageAlt: "Planetary ball milling used for PZT synthesis",
       },
 
@@ -248,7 +248,7 @@ const PROJECT_DETAILS = {
         title: "Phase Formation",
         text:
           "X-ray diffraction was used to monitor phase evolution during milling. The PZT perovskite phase was observed to form within approximately two hours of milling, demonstrating the effectiveness of the mechanochemical synthesis route.",
-        image: "/images/XRD.jpeg",
+        image: "/images/pellet.png",
         imageAlt: "XRD analysis showing PZT phase formation",
       },
 
@@ -256,7 +256,7 @@ const PROJECT_DETAILS = {
         title: "Microstructural Evolution",
         text:
           "Scanning electron microscopy was used to examine the microstructural evolution of the synthesized ceramics as a function of processing conditions. Changes in morphology, densification, and porosity were correlated with milling duration.",
-        image: "/images/project3-sem.jpeg",
+        image: "/images/sem.png",
         imageAlt: "SEM microstructure of PZT ceramics",
       },
 
@@ -264,7 +264,7 @@ const PROJECT_DETAILS = {
         title: "First-Principles Analysis",
         text:
           "Density functional theory calculations were performed using DMol³ in Materials Studio to investigate the electronic structure of PZT. Band-structure and density-of-states calculations were used to analyze its electronic behavior.",
-        image: "/images/project3-dft.jpeg",
+        image: "/images/dft.png",
         imageAlt: "DFT band structure and density of states of PZT",
       },
     ],
