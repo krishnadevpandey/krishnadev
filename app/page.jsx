@@ -89,6 +89,7 @@ const PROJECTS = [
 
 const PROJECT_DETAILS = {
   "01": {
+    caption: "PZT PMUT device characterized using Laser Doppler Vibrometry to evaluate its electromechanical response.",
     objective:
       "To investigate how electrode architectures and thin-film properties influence the electrical, piezoelectric, and electromechanical performance of PZT-based piezoelectric MEMS devices.",
 
@@ -158,6 +159,7 @@ const PROJECT_DETAILS = {
   },
 
   "02": {
+    caption: "Laser Doppler Vibrometry-based characterization of piezoelectric thin-film response.",
     objective:
       "To establish reliable methodologies for piezoelectric d33 extraction and investigate the influence of measurement geometry and ferroelectric poling on thin-film piezoelectric response.",
 
@@ -219,6 +221,7 @@ const PROJECT_DETAILS = {
   },
 
   "03": {
+    caption: "X-ray diffraction analysis of PZT ceramics showing the evolution of the perovskite phase during mechanochemical synthesis.",
     objective:
       "To synthesize single-phase lead zirconate titanate (PZT) ceramics through mechanochemical processing and investigate their phase formation, microstructure, and electronic structure using experimental characterization and first-principles calculations.",
 
@@ -276,6 +279,7 @@ const PROJECT_DETAILS = {
   },
 
   "04": {
+    caption: "PMN-PT single-crystal characterization following different electrical poling conditions.",
     objective:
       "To investigate crystallographic orientation selection during CdZnTe single-crystal growth and evaluate the effects of DC and pulsed/AC poling on the piezoelectric response of PMN-PT single crystals.",
 
@@ -973,28 +977,43 @@ function ProjectDetailPage({ project, setPage }) {
 
 
         {/* HERO IMAGE */}
-        <div
-          style={{
-            width: "100%",
-            maxHeight: 560,
-            background: project.gradient,
-            borderRadius: 4,
-            border: `1px solid ${project.color}33`,
-            overflow: "hidden",
-            marginBottom: 75,
-          }}
-        >
-          <img
-            src={project.image}
-            alt={project.imageAlt}
-            style={{
-              width: "100%",
-              maxHeight: 560,
-              display: "block",
-              objectFit: "contain",
-            }}
-          />
-        </div>
+        <div style={{ marginBottom: 55 }}>
+  <div
+    style={{
+      width: "100%",
+      aspectRatio: "16/9",
+      background: project.gradient,
+      borderRadius: 4,
+      border: `1px solid ${project.color}33`,
+      overflow: "hidden",
+    }}
+  >
+    <img
+      src={project.image}
+      alt={project.imageAlt}
+      style={{
+        width: "100%",
+        height: "100%",
+        objectFit: "contain",
+      }}
+    />
+  </div>
+
+  {detail.caption && (
+    <p
+      style={{
+        marginTop: 12,
+        fontFamily: "'Space Grotesk', sans-serif",
+        fontSize: 12,
+        lineHeight: 1.6,
+        color: "rgba(255,255,255,0.45)",
+        fontStyle: "italic",
+      }}
+    >
+      {detail.caption}
+    </p>
+  )}
+</div>
 
 
         {/* OBJECTIVE */}
