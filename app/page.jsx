@@ -101,7 +101,7 @@ const PROJECT_DETAILS = {
         title: "Wafer-Level Characterization",
         text:
           "Characterized more than 270 circular PZT capacitor test structures across 4-inch (100)- and (111)-oriented wafers to evaluate device yield, leakage behavior, dielectric response, and spatial uniformity. The measurements enabled wafer-level identification of shorted devices and process-related variations.",
-        image: "/images/project1-wafer.jpeg",
+        image: "/images/Wafer.jpeg",
         imageAlt: "Wafer-level characterization of PZT capacitor devices",
       },
 
@@ -109,7 +109,7 @@ const PROJECT_DETAILS = {
         title: "Piezoelectric Coefficient Extraction",
         text:
           "Extracted the in-plane piezoelectric coefficients d31 and e31,f for PZT and AlN microcantilevers using Laser Doppler Vibrometry. The measured electromechanical response was analyzed using a MATLAB-based model to relate cantilever displacement to the thin-film piezoelectric response.",
-        image: "/images/project1-cantilever.jpeg",
+        image: "/images/AlN.png",
         imageAlt: "PZT and AlN cantilever characterization using LDV",
       },
 
