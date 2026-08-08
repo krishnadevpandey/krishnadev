@@ -117,7 +117,7 @@ const PROJECT_DETAILS = {
         title: "PMUT Interface Engineering",
         text:
           "Investigated the effect of bottom-electrode architecture on PMUT performance by comparing single-, bilayer-, and composite-Pt configurations. Resonance behavior, displacement profiles, and electrical output were characterized using Laser Doppler Vibrometry and lock-in amplifier measurements.",
-        image: "/images/project1-pmut.jpeg",
+        image: "/images/PMUT.jpg",
         imageAlt: "PMUT electrode architectures and characterization",
       },
 
